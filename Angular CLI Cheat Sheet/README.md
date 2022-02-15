@@ -27,3 +27,65 @@
   ```
   ng doc
   ```
+
+### ng update:
+- Update core/rxJS/TScript:
+  ```
+  ng update @angular/core
+  ```
+- Update Material:
+  ```
+  ng update @angular/material
+  ```
+  
+### Generate All The Things:
+- Generate a component:
+  ```
+  ng g c componentName
+  ```
+- Generate a service:
+  ```
+  ng g s serviceName
+  ```
+- Generate a pipe:
+  ```
+  ng g pipe pipeName
+  ```
+- Generate a directive:
+  ```
+  ng g directive directiveName
+  ```
+- Generate an enum:
+  ```
+  ng g enum enumName
+  ```
+- Generate a module:
+  ```
+  ng g module moduleName
+  ```
+- Generate a class:
+  ```
+  ng g cl className
+  ```
+- Generate an interface:
+  ```
+  ng g interface interfaceName
+  ```
+- Generate a route guard:
+  ```
+  ng g guard guardName
+  ```
+  
+### Serving:
+- Serve your project:
+  ```
+  ng s
+  ```
+- Serve and open in your default browser automatically:
+  ```
+  ng s -o
+  ```
+- Serve to a different port:
+  ```
+  ng s --port 5555
+  ```
