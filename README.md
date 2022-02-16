@@ -44,6 +44,16 @@
 - Use interpolation to dynamically change what appears in an application view.
 - [Read More](https://angular.io/guide/interpolation#resolving-expressions-with-interpolation)
 
+### Just-in-Time:
+- Larger file size
+- Loads slower since compiler needs to run in browser.
+- Catch errors in browser
+
+### Ahead-of-Time:
+- Small file size
+- Loads faster since the app is compiled on delivery to the browser.
+- Catch errors on the server
+
 # Important Points:
 - ng serve -> call ```environment.ts file``` -> production: false
 - ng build	-> call ```environment.prod.ts``` -> production: true
