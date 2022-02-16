@@ -44,5 +44,7 @@
 # Important Points:
 - ng serve -> call ```environment.ts file``` -> production: false
 - ng build	-> call ```environment.prod.ts``` -> production: true
+- main.ts -> entry point
 - first priority is ```templateUrl``` rather than ```template```.
 - first priority is ```styles``` rather than ```styleUrls```.
+- ```npm start``` == ```ng serve```
