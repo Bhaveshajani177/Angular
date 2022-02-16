@@ -51,3 +51,5 @@
 - first priority is ```templateUrl``` rather than ```template```.
 - first priority is ```styles``` rather than ```styleUrls```.
 - ```npm start``` == ```ng serve```
+- Use brackets [] instead of new Array().
+- Use curly braces {} instead of new Object().
