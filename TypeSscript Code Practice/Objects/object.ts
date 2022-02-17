@@ -3,6 +3,8 @@ let xyz: {};
 
 let employee: object;
 
+let employeeA: Object;
+
 employee = {
   firstName: "Bhavesh",
   lastName: "Ajani",
