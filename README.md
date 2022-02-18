@@ -90,3 +90,4 @@
 - Use curly braces {} instead of new Object().
 - ```|``` = Pipe character
 - ```?``` = optional parameter
+- Prefix ```ng``` stands for ```Angular```
