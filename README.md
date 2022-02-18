@@ -16,7 +16,7 @@
     &nbsp;8.6. [Interface](https://github.com/Bhaveshajani177/Angular/tree/main/TypeSscript%20Code%20Practice/Interface)<br />
     &nbsp;8.7. [Generics](https://github.com/Bhaveshajani177/Angular/blob/main/TypeSscript%20Code%20Practice/Generics/Queue.ts)<br />
 9. Angular:<br />
-    &nbsp;9.1. [Basics]()<br />
+    &nbsp;9.1. [Basics](https://github.com/Bhaveshajani177/Angular/blob/main/Angular/README.md)<br />
     &nbsp;9.2. [Modules](https://github.com/Bhaveshajani177/Angular/tree/main/Angular/Modules) 
 
 # Notes:
