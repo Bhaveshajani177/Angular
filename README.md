@@ -14,6 +14,8 @@
     &nbsp;8.4. [Objects](https://github.com/Bhaveshajani177/Angular/tree/main/TypeSscript%20Code%20Practice/Objects)<br />
     &nbsp;8.5. [Interface](https://github.com/Bhaveshajani177/Angular/tree/main/TypeSscript%20Code%20Practice/Interface)<br />
     &nbsp;8.6. [Generics](https://github.com/Bhaveshajani177/Angular/blob/main/TypeSscript%20Code%20Practice/Generics/Queue.ts)<br />
+9. Angular:<br />
+    &nbsp;9.1. [Modules]() 
 
 # Notes:
 
