@@ -76,11 +76,6 @@
   - **Type inference:** Implicit typing performed by TypeScript itself, so that your developers don’t need to provide types where the compiler can find them on its own.
   - **Types make code management easier**
 
-### object:
-- The TypeScript object type represents any value that is not a primitive value.
-- The Object type, however, describes functionality that available on all objects.
-- The empty type {} refers to an object that has no property on its own.
-
 ### Interfaces:
 - They provide explicit names for type checking.
 - Interfaces may have optional properties or readonly properties.
