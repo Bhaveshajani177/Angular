@@ -6,7 +6,14 @@
 4. [Angular Style Guide](https://github.com/Bhaveshajani177/Angular/blob/main/Angular%20Style%20Guide/README.md)
 5. [Property Binding Example](https://stackblitz.com/edit/angular-ivy-9omnsc?file=src%2Fapp%2Fapp.component.ts)
 6. [Event Binding Example](https://stackblitz.com/edit/angular-ivy-9omnsc?file=src%2Fapp%2Fapp.component.ts)
-7. [Ways To Convert String Into Number](https://github.com/Bhaveshajani177/Angular/blob/main/Ways%20To%20Convert%20String%20Into%20Number/script.js)
+7. [Ways To Convert String Into Number](https://github.com/Bhaveshajani177/Angular/blob/main/Ways%20To%20Convert%20String%20Into%20Number/script.js)<br />
+8. TypeSscript<br />
+    8.1. [Variables](https://github.com/Bhaveshajani177/Angular/blob/main/TypeSscript%20Code%20Practice/Variables/variables.ts)<br />
+    8.2. [Array](https://github.com/Bhaveshajani177/Angular/blob/main/TypeSscript%20Code%20Practice/Array/array.ts)<br />
+    8.3. [Classes](https://github.com/Bhaveshajani177/Angular/blob/main/TypeSscript%20Code%20Practice/Classes/BankAccount.ts)<br />
+    8.4. [Objects](https://github.com/Bhaveshajani177/Angular/blob/main/TypeSscript%20Code%20Practice/Objects/object.ts)<br />
+    8.5. [Interface](https://github.com/Bhaveshajani177/Angular/blob/main/TypeSscript%20Code%20Practice/Interface/interface.ts)<br />
+    8.6. [Generics](https://github.com/Bhaveshajani177/Angular/blob/main/TypeSscript%20Code%20Practice/Generics/Queue.ts)<br />
 
 # Notes:
 
