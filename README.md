@@ -8,7 +8,7 @@
 6. [Event Binding Example](https://stackblitz.com/edit/angular-ivy-9omnsc?file=src%2Fapp%2Fapp.component.ts)
 7. [Ways To Convert String Into Number](https://github.com/Bhaveshajani177/Angular/blob/main/Ways%20To%20Convert%20String%20Into%20Number/script.js)<br />
 8. TypeSscript:<br />
-    &nbsp;8.1. [Basics]()<br />
+    &nbsp;8.1. [Basics](https://github.com/Bhaveshajani177/Angular/blob/main/TypeScript/README.md)<br />
     &nbsp;8.2. [Variables](https://github.com/Bhaveshajani177/Angular/blob/main/TypeSscript%20Code%20Practice/Variables/variables.ts)<br />
     &nbsp;8.3. [Array](https://github.com/Bhaveshajani177/Angular/blob/main/TypeSscript%20Code%20Practice/Array/array.ts)<br />
     &nbsp;8.4. [Classes](https://github.com/Bhaveshajani177/Angular/blob/main/TypeSscript%20Code%20Practice/Classes/BankAccount.ts)<br />
