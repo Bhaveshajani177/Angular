@@ -76,12 +76,6 @@
   - **Type inference:** Implicit typing performed by TypeScript itself, so that your developers don’t need to provide types where the compiler can find them on its own.
   - **Types make code management easier**
 
-### Interfaces:
-- They provide explicit names for type checking.
-- Interfaces may have optional properties or readonly properties.
-- Interfaces can be used as function types.
-- Interfaces are typically used as class types that make a contract between unrelated classes.
-
 # Important Points:
 - ng serve -> call ```environment.ts file``` -> production: false
 - ng build	-> call ```environment.prod.ts``` -> production: true
