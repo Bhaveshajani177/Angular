@@ -19,18 +19,6 @@
     &nbsp;9.1. [Basics](https://github.com/Bhaveshajani177/Angular/blob/main/Angular/README.md)<br />
     &nbsp;9.2. [Modules](https://github.com/Bhaveshajani177/Angular/tree/main/Angular/Modules) 
 
-### TypeScript:
-- Typescript is a Javascript superset.
-- It offers more features than Javascript like classes, interfaces, types.
-- Uses strong typing(you define if something is a string, number etc).
-- TypeScript adds additional syntax to JavaScript to support a tighter integration with your editor. Catch errors early in your editor.
-- TypeScript code converts to JavaScript, which runs anywhere JavaScript runs.
-- Advantages of TypeScript:
-  - **Strict typing**
-  - **Type annotations:** A handy way of saying explicitly what type should be used.
-  - **Type inference:** Implicit typing performed by TypeScript itself, so that your developers don’t need to provide types where the compiler can find them on its own.
-  - **Types make code management easier**
-
 # Important Points:
 - ng serve -> call ```environment.ts file``` -> production: false
 - ng build	-> call ```environment.prod.ts``` -> production: true
