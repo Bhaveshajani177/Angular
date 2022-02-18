@@ -11,7 +11,7 @@
     &nbsp;8.1. [Variables](https://github.com/Bhaveshajani177/Angular/blob/main/TypeSscript%20Code%20Practice/Variables/variables.ts)<br />
     &nbsp;8.2. [Array](https://github.com/Bhaveshajani177/Angular/blob/main/TypeSscript%20Code%20Practice/Array/array.ts)<br />
     &nbsp;8.3. [Classes](https://github.com/Bhaveshajani177/Angular/blob/main/TypeSscript%20Code%20Practice/Classes/BankAccount.ts)<br />
-    &nbsp;8.4. [Objects](https://github.com/Bhaveshajani177/Angular/blob/main/TypeSscript%20Code%20Practice/Objects/object.ts)<br />
+    &nbsp;8.4. [Objects](https://github.com/Bhaveshajani177/Angular/tree/main/TypeSscript%20Code%20Practice/Objects)<br />
     &nbsp;8.5. [Interface](https://github.com/Bhaveshajani177/Angular/blob/main/TypeSscript%20Code%20Practice/Interface/interface.ts)<br />
     &nbsp;8.6. [Generics](https://github.com/Bhaveshajani177/Angular/blob/main/TypeSscript%20Code%20Practice/Generics/Queue.ts)<br />
 
