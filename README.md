@@ -1,6 +1,7 @@
 # Angular Projects <img align="right" src="https://angular.io/assets/images/logos/angular/angular.svg" alt="angular" width="50" height="50"/>
 
 1. [Sharing Data Between Child And Parent Components (Input/Output)](https://stackblitz.com/edit/angular-ivy-wlzvkg)
+2. [Content Projection **ng-content**](https://stackblitz.com/edit/angular-ivy-gy7waa)
 
 # Notes
 
