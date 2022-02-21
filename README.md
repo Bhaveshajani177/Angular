@@ -9,7 +9,7 @@
 7. [Ways To Convert String Into Number](https://github.com/Bhaveshajani177/Angular/blob/main/Ways%20To%20Convert%20String%20Into%20Number/script.js)<br />
 8. TypeSscript:<br />
     &nbsp;8.1. [Basics](https://github.com/Bhaveshajani177/Angular/blob/main/TypeScript/README.md)<br />
-    &nbsp;8.2. [Variables](https://github.com/Bhaveshajani177/Angular/blob/main/TypeSscript%20Code%20Practice/Variables/variables.ts)<br />
+    &nbsp;8.2. [Variables](https://github.com/Bhaveshajani177/Angular/blob/main/TypeScript%20Code%20Practice/Variables/variables.ts)<br />
     &nbsp;8.3. [Array](https://github.com/Bhaveshajani177/Angular/blob/main/TypeScript%20Code%20Practice/Array/array.ts)<br />
     &nbsp;8.4. [Classes](https://github.com/Bhaveshajani177/Angular/blob/main/TypeScript%20Code%20Practice/Classes/BankAccount.ts)<br />
     &nbsp;8.5. [Objects](https://github.com/Bhaveshajani177/Angular/tree/main/TypeScript%20Code%20Practice/Objects)<br />
