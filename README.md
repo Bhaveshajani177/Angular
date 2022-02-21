@@ -2,6 +2,7 @@
 
 1. [Sharing Data Between Child And Parent Components (Input/Output)](https://stackblitz.com/edit/angular-ivy-wlzvkg)
 2. [Content Projection **ng-content**](https://stackblitz.com/edit/angular-ivy-gy7waa)
+3. [Lifecycle Hooks Example](https://stackblitz.com/edit/angular-ivy-nqrcwu?file=src%2Fapp%2Fchild%2Fchild.component.ts)
 
 # Notes
 
