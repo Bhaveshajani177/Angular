@@ -31,3 +31,4 @@
 - ```|``` = Pipe character
 - ```?``` = optional parameter
 - Prefix ```ng``` stands for ```Angular```
+- **Transpiler**: The compiler takes the TypeScript code and converts it into JavaScript. This process is commonly referred to as transpiling, and since the TypeScript compiler does it, it's called a transpiler.
