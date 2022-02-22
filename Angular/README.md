@@ -34,3 +34,19 @@
 - The ng-content tag acts as a placeholder for inserting external or dynamic content.
 - The Parent component passes the external content to the child component.
 - That does not create a real DOM element.
+
+### Angular Lifecycle Hooks:
+- Lifecycle hooks are timed methods. 
+- All lifecycle methods are available from @angular/core.
+- ngOnInit:
+  - ngOnInit fires once upon initialization of a component’s input-bound (@Input) properties.
+  - The hook does not fire as ChildComponent receives the input data.
+  - ngOnInit is a one-and-done hook. Initialization is its only concern.
+- ngOnChanges:
+  - ngOnChanges triggers following the modification of @Input bound class members.
+  - It also fires upon initialization of input data.
+  - Data bound by the @Input() decorator come from an external source. When the external source alters that data in a detectable manner, it passes through the @Input property again. With this update, ngOnChanges immediately fires.
+  - The hook receives one optional parameter of type SimpleChanges. This value contains information on the changed input-bound properties.
+- ngOnDestroy:
+  - ngOnDestroy fires upon a component’s removal from the view and subsequent DOM.
+  - This hook provides a chance to clean up any loose ends before a component’s deletion.
