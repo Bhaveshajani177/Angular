@@ -50,3 +50,19 @@
 - ngOnDestroy:
   - ngOnDestroy fires upon a component’s removal from the view and subsequent DOM.
   - This hook provides a chance to clean up any loose ends before a component’s deletion.
+
+### Content projection:
+- Content projection is a pattern in which you insert, or project, the content you want to use inside another component.
+- For example, you could have a Card component that accepts content provided by another component.
+- common implementations of content projection in Angular:
+  - Single-slot content projection
+  - Multi-slot content projection
+  - Conditional content projection.
+- Multi-slot content projection:
+  - A component can have multiple slots. Each slot can specify a CSS selector that determines which content goes into that slot. This pattern is referred to as multi-slot content projection.
+  - With this pattern, you must specify where you want the projected content to appear.
+  - You accomplish this task by using the select attribute of <ng-content>.
+- Conditional content projection:
+  - If your component needs to conditionally render content, or render content multiple times, you should configure that component to accept an <ng-template> element that contains the content you want to conditionally render.
+  - Using an <ng-content> element in these cases is not recommended, because when the consumer of a component supplies the content, that content is always initialized, even if the component does not define an <ng-content> element or if that <ng-content> element is inside of an ngIf statement.
+  - With an <ng-template> element, you can have your component explicitly render content based on any condition you want, as many times as you want. Angular will not initialize the content of an <ng-template> element until that element is explicitly rendered.
