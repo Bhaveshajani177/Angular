@@ -25,3 +25,12 @@
 - Small file size
 - Loads faster since the app is compiled on delivery to the browser.
 - Catch errors on the server
+
+### @ViewChild:
+- Property decorator that configures a view query.
+- The ViewChild decorator is used to gain access to a child component, found in the template, so that you can access its properties and methods.
+
+### ng-content
+- The ng-content tag acts as a placeholder for inserting external or dynamic content.
+- The Parent component passes the external content to the child component.
+- That does not create a real DOM element.
