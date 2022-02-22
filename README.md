@@ -58,5 +58,5 @@
     3. production. 
 - ```ngClass```: Adds and removes CSS classes on an HTML element.
 - ```<ng-template>```: defines a template that is not rendered by default. allowing you to have full control over how and when the content is displayed.
-- asterisk(*): The * syntax is a shortcut that lets you avoid writing the whole ```<template>``` element.
+- asterisk(*): The ```*``` syntax is a shortcut that lets you avoid writing the whole ```<template>``` element.
 - pipes: Pipes are simple functions to use in template expressions to accept an input value and return a transformed value.
