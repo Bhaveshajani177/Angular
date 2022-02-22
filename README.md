@@ -60,3 +60,5 @@
 - ```<ng-template>```: defines a template that is not rendered by default. allowing you to have full control over how and when the content is displayed.
 - asterisk(*): The ```*``` syntax is a shortcut that lets you avoid writing the whole ```<template>``` element.
 - pipes: Pipes are simple functions to use in template expressions to accept an input value and return a transformed value.
+- In Angular, we **cannot use two structural directives on the same element**. i.e., we cannot place *ngFor,*ngIf together on same element.
+- Print mutiple objects in one ```console.log()```: ```console.log({obj1,obj2});```
