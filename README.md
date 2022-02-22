@@ -25,7 +25,11 @@
     &nbsp;8.7. [Generics](https://github.com/Bhaveshajani177/Angular/blob/main/TypeScript%20Code%20Practice/Generics/Queue.ts)<br />
 9. Angular:<br />
     &nbsp;9.1. [Basics](https://github.com/Bhaveshajani177/Angular/blob/main/Angular/README.md)<br />
-    &nbsp;9.2. [Modules](https://github.com/Bhaveshajani177/Angular/tree/main/Angular/Modules) 
+    &nbsp;9.2. [Modules](https://github.com/Bhaveshajani177/Angular/tree/main/Angular/Modules)
+    
+# Important Questions:
+
+- [What's the difference between tilde(~) and caret(^) in package.json?](https://github.com/Bhaveshajani177/Angular/blob/main/Angular/Difference%20between%20tilde(~)%20and%20caret(%5E)%20in%20package.json/README.md)
 
 # Important Points:
 - ng serve -> call ```environment.ts file``` -> production: false
