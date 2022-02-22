@@ -66,3 +66,22 @@
   - If your component needs to conditionally render content, or render content multiple times, you should configure that component to accept an <ng-template> element that contains the content you want to conditionally render.
   - Using an <ng-content> element in these cases is not recommended, because when the consumer of a component supplies the content, that content is always initialized, even if the component does not define an <ng-content> element or if that <ng-content> element is inside of an ngIf statement.
   - With an <ng-template> element, you can have your component explicitly render content based on any condition you want, as many times as you want. Angular will not initialize the content of an <ng-template> element until that element is explicitly rendered.
+  
+### ngClass:
+- Adds and removes CSS classes on an HTML element.
+- The CSS classes are updated as follows, depending on the type of the expression evaluation:
+  - string 
+  - Array 
+  - Object 
+- Methods: ngDoCheck()
+
+### pipes:
+- Pipes are simple functions to use in template expressions to accept an input value and return a transformed value.
+- Use pipes to transform strings, currency amounts, dates, and other data for display.
+- The following are commonly used built-in pipes for data formatting:
+  - DatePipe: Formats a date value according to locale rules.
+  - UpperCasePipe: Transforms text to all upper case.
+  - LowerCasePipe: Transforms text to all lower case.
+  - CurrencyPipe: Transforms a number to a currency string, formatted according to locale rules.
+  - DecimalPipe: Transforms a number into a string with a decimal point, formatted according to locale rules.
+  - PercentPipe: Transforms a number to a percentage string, formatted according to locale rules.
