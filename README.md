@@ -43,17 +43,10 @@
 - ```@Input()``` lets a parent component update data in the child component.
 - ```@Output()``` lets the child send data to a parent component.
 - ```:host``` selector only targets the host element of a component. Any styles within the :host block of a child component will not affect parent components.
-- ```<ng-content>```:
-    - The ng-content tag acts as a placeholder for inserting external or dynamic content.
-    - The Parent component passes the external content to the child component.
-    - That does not create a real DOM element.
 - Different ways to pass data between components.
     1. Parent to Child: Via ```@Input```
     2. Child to Parent: Via ```@Output```
     3. Child to Parent: Via ```@ViewChild```
-- ```@ViewChild```:
-    - Property decorator that configures a view query.
-    - The ViewChild decorator is used to gain access to a child component, found in the template, so that you can access its properties and methods.
 - Production Environment:
     1. development (local).
     2. stage.
