@@ -64,3 +64,11 @@
 - pipes: Pipes are simple functions to use in template expressions to accept an input value and return a transformed value.
 - In Angular, we **cannot use two structural directives on the same element**. i.e., we cannot place *ngFor,*ngIf together on same element.
 - Print mutiple objects in one ```console.log()```: ```console.log({obj1,obj2});```
+- If you want to inject service at the global level then add in 'module.ts' under providers array.
+- If you want to inject service at the local lavel or component lavel then add in @component decorator under providers array.
+- ```ng-content```, called in: ngDoCheck() and ngAfterContentInit()
+- ng server ->  it is an angular command
+- npm -> it is node package manager command
+- how to get index for ngfor:
+    - ```*ngFor="let item of items; index as i;"```
+    - ```*ngFor="let item of items; let i = index;"```
