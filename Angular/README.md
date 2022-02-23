@@ -85,3 +85,9 @@
   - CurrencyPipe: Transforms a number to a currency string, formatted according to locale rules.
   - DecimalPipe: Transforms a number into a string with a decimal point, formatted according to locale rules.
   - PercentPipe: Transforms a number to a percentage string, formatted according to locale rules.
+
+### services:
+  - One of the best uses of services is to get data from a data source.
+  - We can reuse the service at many places.
+  - Angular services are singleton objects that get instantiated only once during the lifetime of an application.
+  - The main objective of a service is to organize and share business logic, models, or data and functions with different components of an Angular application.
