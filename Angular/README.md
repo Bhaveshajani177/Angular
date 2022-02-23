@@ -91,3 +91,16 @@
   - We can reuse the service at many places.
   - Angular services are singleton objects that get instantiated only once during the lifetime of an application.
   - The main objective of a service is to organize and share business logic, models, or data and functions with different components of an Angular application.
+  
+### View Encapsulation:
+- The valid values for this config property are:
+  - ViewEncapsulation.Native
+  - ViewEncapsulation.Emulated
+  - ViewEncapsulation.None
+- The default value is ViewEncapsulation.Emulated and that is the behaviour we are currently seeing.
+- ViewEncapsulation.Emulated:
+  - Angular modifies the component's CSS selectors so that they are only applied to the component's view and do not affect other elements in the application
+- ViewEncapsulation.None:
+  - Angular does not apply any sort of view encapsulation meaning that any styles specified for the component are actually globally applied and can affect any HTML element present within the application. This mode is essentially the same as including the styles into the HTML itself.
+- If you want styles that are added to Parent applied to Child you need to set ViewEncapsulation.None in the Child component so it doesn't prevent styles to bleed in.
+- Emulated and Native are just two different ways to prevent styles to bleed in to and out from components. None is the only one that allows styles to cross component boundaries.
