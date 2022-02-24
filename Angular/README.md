@@ -101,3 +101,19 @@
   - Angular does not apply any sort of view encapsulation meaning that any styles specified for the component are actually globally applied and can affect any HTML element present within the application. This mode is essentially the same as including the styles into the HTML itself.
 - If you want styles that are added to Parent applied to Child you need to set ViewEncapsulation.None in the Child component so it doesn't prevent styles to bleed in.
 - Emulated and Native are just two different ways to prevent styles to bleed in to and out from components. None is the only one that allows styles to cross component boundaries.
+  
+### One-way Data Binding:
+- One-way data binding will bind the data from the component to the view (DOM) or from view to the component.
+- One-way data binding is unidirectional. You can only bind the data from component to the view or from view to the component.
+- Below are some of the techniques, which uses one-way data binding:
+  - Interpolation Binding '{{}}'
+  - Style Binding
+  - Attribute Binding
+  - Class Binding
+  - Style Binding
+
+### Two-way Data Binding:
+- Two-way data binding in Angular will help users to exchange data from the component to view and from view to the component.
+- It will help users to establish communication bi-directionally.
+- Two-way data binding can be achieved using a ngModel directive in Angular.
+- syntax: ```[(ngModel)]```
