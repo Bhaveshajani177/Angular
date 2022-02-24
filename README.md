@@ -73,3 +73,10 @@
 - how to get index for ngfor:
     - ```*ngFor="let item of items; index as i;"```
     - ```*ngFor="let item of items; let i = index;"```
+- **Type annotations:** Type annotations are a way to describe the data in our application.
+- **Decorators** are functions for extending business logic or adding metadata.
+- **Attribute Directives:** Changes the appearance or behavior of an element
+- **Structural Directives:** Add or remove elements from the DOM
+- **Garbage Collection:** a program that automates the task of freeing up memory.
+- **Memory Leak:** a memory leak is when a variable is not uninitialized.
+- **FormControl Properties:** value, touched, untouched, dirty, valid, errors, pristine.
