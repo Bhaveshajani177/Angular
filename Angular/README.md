@@ -1,5 +1,19 @@
 # Angular Notes: <img align="right" src="https://angular.io/assets/images/logos/angular/angular.svg" alt="angular" width="50" height="50"/>
 
+### History of Angular Versions:
+- Angular version 1.0 which is known as AngularJS was released in 2010 by Google
+- Angular version 2.0 was released in September 2016
+- Angular 4.0 was released in March 2017
+- Angular 5.0 was released in Nov 2017
+- Angular 6.0 was released in May 2018
+- Angular 7.0 was released in Oct 2018
+- Angular 8.0 was released in May 2019
+- Angular 9.0 was released in Feb 2020
+- Angular 10.0 was released in June 2020
+- Angular 11.0 was released in Nov 2020
+- Angular 12.0 was released in May 2021
+- Angular 13.0 was released in November 2021
+
 ### platformBrowserDynamic:
 - platformBrowserDynamic is a function used to bootstrap an Angular application.
 - contains the client side code that processes templates (bindings, components, ...) and reflective dependency injection.
