@@ -36,6 +36,12 @@
   ng generate component --spec=false mycomponentName
   ```
 
+### CoreModule:
+- Your CoreModule contains code that will be used to instantiate your app and load some core functionality.
+- The Core Module is a module we create to define common services.
+- The services defined in the Core Module are instantiated once.
+- This type of module is imported only from the main module, as it contains singleton services that any element in the application can use. We do not want to import it in each module, as this will create additional instances.
+
 ### Interpolation "{{}}":
 - Text interpolation lets you incorporate dynamic string values into your HTML templates.
 - Use interpolation to dynamically change what appears in an application view.
