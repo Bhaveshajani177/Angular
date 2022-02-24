@@ -8,6 +8,20 @@
 ### polyfills:
 - Angular is built on the latest standards of the web platform. Targeting such a wide range of browsers is challenging because they do not support all features of modern browsers. You compensate by loading polyfill scripts ("polyfills") for the browsers that you must support.
 
+### spec.ts
+
+- This file contains unit tests for the main AppComponent.
+- The spec files are unit tests for your source files. The convention for Angular applications is to have a .spec.ts file for each .ts file.
+- They are run using the Jasmine javascript test framework through the Karma test runner when you use the (ng test) command.
+- If you generate new angular project using "**ng new**", you may skip a generating of **spec.ts** files. For this you should apply **--skip-tests** option.
+  ```
+  ng new ng-app-name --skip-tests
+  ```
+- If you don't to get it generated just use --spec=false while creating new Component.
+  ```
+  ng generate component --spec=false mycomponentName
+  ```
+
 ### Interpolation "{{}}":
 - Text interpolation lets you incorporate dynamic string values into your HTML templates.
 - Use interpolation to dynamically change what appears in an application view.
