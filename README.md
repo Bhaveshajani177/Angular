@@ -8,6 +8,7 @@
 6. [Directives Examples](https://stackblitz.com/edit/angular-ivy-x7xj4q?file=src%2Fapp%2Fapp.component.html)
 7. [Services Examples](https://stackblitz.com/edit/angular-ivy-vzqzyi?file=src%2Fapp%2Fapp.component.html)
 8. [Template Driven Forms Example](https://stackblitz.com/edit/angular-ivy-tmkokq?file=src%2Fapp%2Fapp.component.ts)
+9. [Practice Project](https://stackblitz.com/edit/angular-ivy-fe5m4n?file=src%2Fapp%2Fapp.component.html)
 
 # Notes
 
