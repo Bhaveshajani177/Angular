@@ -6,6 +6,8 @@ import { Component, VERSION } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  title = 'Angular Test-2';
+
   // get current data
   currentData: Date = new Date();
 
