@@ -1,0 +1,88 @@
+<div class="container">
+    <!-- form -->
+    <h4>Add Student Form</h4>
+    <form class="mt-3" name="studentForm" #studentForm="ngForm">
+        <!-- First name -->
+        <div class="row">
+            <div class="col-6 mb-2">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" #firstName placeholder="First name" required>
+            </div>
+
+            <!-- Last name -->
+            <div class="col-6 mb-2">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" #lastName placeholder="Last name" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Gender (Male/Female) -->
+            <div class="col-6 mb-2">
+                <label for="gender">Gender:</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="male" #genderMale value="male">
+                    <label class="form-check-label" for="male">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="female" #genderFemale value="female">
+                    <label class="form-check-label" for="female">Female</label>
+                </div>
+            </div>
+
+            <!-- Institute Name -->
+            <div class="col-6 mb-2">
+                <label for="instituteName" class="form-label">Institute Name</label>
+                <input type="text" class="form-control" id="instituteName" #instituteName placeholder="Institute name" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- city -->
+            <div class="col-6 mb-2">
+                <label for="city" class="form-label">City</label>
+                <select class="form-select" aria-label="Default select city" #city required>
+          <option value="" selected disabled>Select city</option>
+          <option value="amreli">Amreli</option>
+          <option value="surat">Surat</option>
+          <option value="ahmedabad">Ahmedabad</option>
+        </select>
+            </div>
+
+            <!-- Description -->
+            <div class="col-6 mb-2">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" id="description" #description rows="3" required></textarea>
+            </div>
+        </div>
+
+        <!-- button -->
+        <div class="mt-2 text-end">
+            <button type="button" class="btn btn-primary" (click)="addStudent(genderMale.checked ? genderMale.value : genderFemale.checked ? genderFemale.value : undefined)">Add
+        Student</button>
+        </div>
+    </form>
+</div>
+
+<!-- student-info component -->
+<app-student-info [studentList]="studentList"></app-student-info>
+
+<!-- 
+<div class="container">
+    <h4>Student List</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Institute Name</th>
+                <th scope="col">City</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of studentList">                
+                <app-student-info [studentList]="student"></app-student-info>
+            </tr>
+        </tbody>
+    </table>
+</div> -->

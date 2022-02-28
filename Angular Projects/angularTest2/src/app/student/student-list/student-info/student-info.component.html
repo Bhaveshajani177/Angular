@@ -1,0 +1,40 @@
+<div class="container">
+    <h4>Student List</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Institute Name</th>
+                <th scope="col">City</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of studentList; let i = index" [ngClass]="student.gender === 'male' ? 'maleStyle' : 'femaleStyle'" [ngStyle]="{ color: student.gender === 'male' ? 'purple' : 'red' }">
+                <th>{{student.firstName +" "+ student.lastName}}</th>
+                <th>{{student.gender}}</th>
+                <th>{{student.instituteName}}</th>
+                <th>{{student.city}}</th>
+                <th>
+                    <button type="button" class="btn btn-primary" (click)="getStudentInfo(student)">See Details</button>
+                    <button type="button" class="btn btn-danger" (click)="deleteStudent(i)">Delete</button>
+                </th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- student details component -->
+<app-student-details [stidentInfo]="stidentInfo" *ngIf="studentDetails"></app-student-details>
+
+<!-- <table class="table">
+    <tbody>
+        <tr>
+            <th>{{studentList.firstName +" "+ studentList.lastName}}</th>
+            <th>{{studentList.gender}}</th>
+            <th>{{studentList.instituteName}}</th>
+            <th>{{studentList.city}}</th>
+        </tr>
+    </tbody>
+</table> -->
