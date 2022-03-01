@@ -106,6 +106,15 @@
                 <th scope="col">Action</th>
             </tr>
         </thead>
+
+        <!-- app-student-info component -->
         <tbody app-student-info *ngFor="let student of studentList; let i = index" [studentList]="student" [studentId]="i" (getStudentDetails)="getStudentDetails($event)" (getStudentId)="deleteStudent($event)"></tbody>
+
+        <!-- Show If Data Not Available -->
+        <tbody *ngIf="studentList.length===0">
+            <tr class="text-center" class="noDataLable text-center">
+                <td colspan="5">Data Not Available</td>
+            </tr>
+        </tbody>
     </table>
 </div>
