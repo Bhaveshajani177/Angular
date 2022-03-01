@@ -83,3 +83,8 @@
 - **Garbage Collection:** a program that automates the task of freeing up memory.
 - **Memory Leak:** a memory leak is when a variable is not uninitialized.
 - **FormControl Properties:** value, touched, untouched, dirty, valid, errors, pristine.
+- **DOM:** Document Object Model
+- **ngValue:** used for pass object.
+- Arrow functions:
+    - arrow function is only available in ES6 or ECMAScript 6.
+    - Arrow syntax automatically binds **```this```** to the surrounding code’s context
