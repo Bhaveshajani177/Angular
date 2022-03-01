@@ -1,4 +1,5 @@
-import { Component, VERSION } from '@angular/core';
+import { Component } from '@angular/core';
+import * as packageInfo from '../../package.json';
 
 @Component({
   selector: 'app-root',
@@ -12,5 +13,7 @@ export class AppComponent {
   currentData: Date = new Date();
 
   // get project version
-  projectVersion = VERSION.full;
+  projectVersion = packageInfo;
+
+  constructor() {}
 }

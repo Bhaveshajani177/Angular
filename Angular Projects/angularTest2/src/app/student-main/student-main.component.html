@@ -1,2 +1,5 @@
 <!-- student-list component -->
-<app-student-list></app-student-list>
+<app-student-list (sendStudentDetails)="getStudentDetails($event)"></app-student-list>
+
+<!-- student details component -->
+<app-student-details [stidentInfo]="studentInfo" *ngIf="studentDetails"></app-student-details>

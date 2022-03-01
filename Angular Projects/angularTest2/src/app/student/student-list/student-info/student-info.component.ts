@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IStudent } from '../../../core/models/istudent';
 
 @Component({
@@ -8,16 +8,19 @@ import { IStudent } from '../../../core/models/istudent';
 })
 export class StudentInfoComponent implements OnInit {
   @Input() studentList: IStudent[] = [];
-  stidentInfo = {};
-  studentDetails: boolean = false;
+  // @Input() studentList!: IStudent;
+
+  @Output() getStudentDetails: EventEmitter<IStudent> = new EventEmitter();
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.studentList);
+  }
 
+  // get student details
   getStudentInfo(student: IStudent) {
-    this.stidentInfo = student;
-    this.studentDetails = true;
+    this.getStudentDetails.emit(student);
   }
 
   // delete student method

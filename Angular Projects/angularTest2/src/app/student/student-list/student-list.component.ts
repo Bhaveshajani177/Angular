@@ -1,4 +1,11 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { IStudent } from '../../core/models/istudent';
 
@@ -8,6 +15,8 @@ import { IStudent } from '../../core/models/istudent';
   styleUrls: ['./student-list.component.css'],
 })
 export class StudentListComponent implements OnInit {
+  @Output() sendStudentDetails: EventEmitter<IStudent> = new EventEmitter();
+
   // ViewChilds
   @ViewChild('studentForm') studentForm!: NgForm;
   @ViewChild('firstName') firstName!: ElementRef;
@@ -18,6 +27,7 @@ export class StudentListComponent implements OnInit {
   @ViewChild('description') description!: ElementRef;
 
   studentList: IStudent[] = [];
+  // showStudentList: boolean = false;
 
   constructor() {}
 
@@ -51,6 +61,17 @@ export class StudentListComponent implements OnInit {
 
       this.studentList.push(student);
       this.studentForm.resetForm();
+      // this.showStudentList = true;
     }
+  }
+
+  // get student details
+  getStudentDetails(student: IStudent) {
+    this._sendStudentDetails(student);
+  }
+
+  // send student details to student-main component
+  _sendStudentDetails(student: IStudent) {
+    this.sendStudentDetails.emit(student);
   }
 }
