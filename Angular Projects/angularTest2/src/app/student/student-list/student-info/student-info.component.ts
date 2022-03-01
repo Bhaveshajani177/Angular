@@ -9,8 +9,10 @@ import { IStudent } from '../../../core/models/istudent';
 export class StudentInfoComponent implements OnInit {
   // @Input() studentList: IStudent[] = [];
   @Input() studentList!: IStudent;
+  @Input() studentId!: number;
 
   @Output() getStudentDetails: EventEmitter<IStudent> = new EventEmitter();
+  @Output() getStudentId: EventEmitter<any> = new EventEmitter();
 
   constructor() {}
 
@@ -26,5 +28,6 @@ export class StudentInfoComponent implements OnInit {
   // delete student method
   deleteStudent(id: number) {
     // this.studentList.splice(id, 1);
+    this.getStudentId.emit(id);
   }
 }

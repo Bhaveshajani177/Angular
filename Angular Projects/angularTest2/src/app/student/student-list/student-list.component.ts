@@ -76,7 +76,7 @@ export class StudentListComponent implements OnInit {
   }
 
   // delete student method
-  // deleteStudent(id: number) {
-  //   this.studentList.splice(id, 1);
-  // }
+  deleteStudent(id: any) {
+    this.studentList.splice(id, 1);
+  }
 }
