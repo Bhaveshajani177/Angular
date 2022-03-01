@@ -37,6 +37,7 @@
 - [Why Use Services In Angular?](https://github.com/Bhaveshajani177/Angular/blob/main/Angular/Why%20Use%20Services%20In%20Angular/README.md)
 - [Difference Between Reactive And Template Driven Forms](https://github.com/Bhaveshajani177/Angular/blob/main/Angular/Difference%20Between%20Reactive%20And%20Template%20Driven%20Forms/README.md)
 - [Difference Between Relative Path Vs Absoulute Path](https://github.com/Bhaveshajani177/Angular/blob/main/Angular/Difference%20Between%20Relative%20Path%20Vs%20Absoulute%20Path/README.md)
+- [Difference Between AngularJS Vs Angular 2](https://github.com/Bhaveshajani177/Angular/blob/main/Angular/Difference%20Between%20AngularJS%20Vs%20Angular%202/README.md)
 
 # Important Points:
 - ng serve -> call ```environment.ts file``` -> production: false
