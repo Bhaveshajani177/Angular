@@ -27,7 +27,7 @@ export class StudentListComponent implements OnInit {
   @ViewChild('description') description!: ElementRef;
 
   studentList: IStudent[] = [];
-  // showStudentList: boolean = false;
+  showStudentList: boolean = false;
 
   constructor() {}
 
@@ -61,7 +61,7 @@ export class StudentListComponent implements OnInit {
 
       this.studentList.push(student);
       this.studentForm.resetForm();
-      // this.showStudentList = true;
+      this.showStudentList = true;
     }
   }
 
@@ -74,4 +74,9 @@ export class StudentListComponent implements OnInit {
   _sendStudentDetails(student: IStudent) {
     this.sendStudentDetails.emit(student);
   }
+
+  // delete student method
+  // deleteStudent(id: number) {
+  //   this.studentList.splice(id, 1);
+  // }
 }

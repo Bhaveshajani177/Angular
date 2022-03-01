@@ -7,7 +7,7 @@ import { IStudent } from 'src/app/core/models/istudent';
   styleUrls: ['./student-details.component.css'],
 })
 export class StudentDetailsComponent implements OnInit {
-  @Input() stidentInfo!: IStudent;
+  @Input() studentInfo!: IStudent;
 
   constructor() {}
 

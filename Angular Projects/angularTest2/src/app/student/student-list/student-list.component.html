@@ -58,14 +58,14 @@
 
         <!-- button -->
         <div class="mt-2 text-end">
-            <button type="button" class="btn btn-primary" (click)="addStudent(genderMale.checked ? genderMale.value : genderFemale.checked ? genderFemale.value : undefined)">Add
+            <button type="button" class="btn btn-primary" (click)="addStudent(genderMale.checked ? genderMale.value : genderFemale.checked ? genderFemale.value : 'male')">Add
         Student</button>
         </div>
     </form>
 </div>
 
 <!-- student-info component: pass array -->
-<app-student-info [studentList]="studentList" (getStudentDetails)="getStudentDetails($event)"></app-student-info>
+<!-- <app-student-info [studentList]="studentList" (getStudentDetails)="getStudentDetails($event)"></app-student-info> -->
 
 
 <!-- single value pass -->
@@ -88,7 +88,24 @@
             </tr>
         </thead>
         <tbody>
-            <app-student-info *ngFor="let student of studentList" [studentList]="student" (getStudentDetails)="getStudentDetails($event)"></app-student-info>
+            <app-student-info *ngFor="let student of studentList" [studentList]="student" (getStudentDetails)="getStudentDetails($event)">
+            </app-student-info>
         </tbody>
     </table>
 </div> -->
+
+<div class="container">
+    <h4>Student List</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Institute Name</th>
+                <th scope="col">City</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody app-student-info *ngFor="let student of studentList" [studentList]="student" (getStudentDetails)="getStudentDetails($event)"></tbody>
+    </table>
+</div>

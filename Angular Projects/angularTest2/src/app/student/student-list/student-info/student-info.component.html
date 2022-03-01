@@ -1,5 +1,5 @@
 <!-- Student List Table: for array print -->
-<div class="container">
+<!-- <div class="container">
     <h4>Student List</h4>
     <table class="table">
         <thead>
@@ -25,7 +25,8 @@
             <tr *ngIf="studentList.length===0" class="noDataLable">Data Not Available</tr>
         </tbody>
     </table>
-</div>
+</div> -->
+
 
 <!-- Student List Table: for single value print -->
 <!-- <table class="table">
@@ -45,8 +46,19 @@
             <th>{{studentList.instituteName}}</th>
             <th>{{studentList.city}}</th>
             <th>
-                <button type="button" class="btn btn-primary" (click)="getStudentInfo(studentList)">See Details</button>                
+                <button type="button" class="btn btn-primary" (click)="getStudentInfo(studentList)">See Details</button>
             </th>
         </tr>
     </tbody>
 </table> -->
+
+<!-- Preoare student row -->
+<tr [ngClass]="studentList.gender === 'male' ? 'maleStyle' : 'femaleStyle'" [ngStyle]="{ color: studentList.gender === 'male' ? 'purple' : 'red' }">
+    <td>{{studentList.firstName +" "+ studentList.lastName}}</td>
+    <td>{{studentList.gender}}</td>
+    <td>{{studentList.instituteName}}</td>
+    <td>{{studentList.city}}</td>
+    <td>
+        <button type="button" class="btn btn-primary" (click)="getStudentInfo(studentList)">See Details</button>
+    </td>
+</tr>
