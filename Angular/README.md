@@ -161,3 +161,12 @@
 ### ngForm:
 - It's simply a directive exported from FormsModule which gets automatically added to all <form> tags in your Angular templates once you import the module.
 - the ngForm directive creates a top-level FormGroup instance and binds it to your <form> tag to enable you to work with the form. For example to access the aggregate form value or check validation status.
+
+### @injectable:
+- @Injectable is a decorator in Angular framework, it allows the service to be injected in Components or other service.
+- Marking a class with @Injectable ensures that the compiler will generate the necessary metadata to create the class's dependencies when the class is injected.
+
+### providedIn: 'root':
+- specifies that Angular should provide the service in the root injector.
+- When you add a service provider to the root application injector, it’s available throughout the application.
+- You should always provide your service in the root injector unless there is a case where you want the service to be available only if the consumer imports a particular @NgModule.
