@@ -151,3 +151,13 @@
 - It will help users to establish communication bi-directionally.
 - Two-way data binding can be achieved using a ngModel directive in Angular.
 - syntax: ```[(ngModel)]```
+
+### ElementRef:
+- Angular ElementRef is a wrapper around a native DOM element (HTML element) object. 
+- It contains the property nativeElement, which holds the reference to the underlying DOM object.
+- We use the ViewChild to get the ElementRef of an HTML element in the component class.
+- Angular also inject ElementRef of the Host element of the component or directive when you request for it in the constructor.
+  
+### ngForm:
+- It's simply a directive exported from FormsModule which gets automatically added to all <form> tags in your Angular templates once you import the module.
+- the ngForm directive creates a top-level FormGroup instance and binds it to your <form> tag to enable you to work with the form. For example to access the aggregate form value or check validation status.
