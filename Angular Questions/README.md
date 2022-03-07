@@ -27,3 +27,17 @@
   - It will only update the matching objects and ignores the rest.
   - Use the patchValue() method to replace any properties defined in the object that have changed in the form model.
   - patchValue() method applies the update against the model structure. PatchValue() only updates properties that the form model defines.
+
+### Print 'default name' if name = null or undefined or ''
+
+```html
+<!-- * way - 1 -->
+<h3>{{ name ? name : 'default name' }}</h3>
+
+<!-- * way - 2 -->
+<h3>{{ name || 'default name' }}</h3>
+
+<!-- * way - 3 -->
+<h3>{{ name === null || name === undefined || name === '' ? 'default name' : name }}</h3>
+
+```
