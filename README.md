@@ -9,6 +9,10 @@
 7. [Services Examples](https://stackblitz.com/edit/angular-ivy-vzqzyi?file=src%2Fapp%2Fapp.component.html)
 8. [Template Driven Forms Example](https://stackblitz.com/edit/angular-ivy-tmkokq?file=src%2Fapp%2Fapp.component.ts)
 9. [Smart Data Table](https://stackblitz.com/edit/angular-ivy-fe5m4n?file=src%2Fapp%2Fapp.component.html)
+10. [Form Builder Example](https://stackblitz.com/edit/angular-ivy-wb5ksk)
+11. [From Array Example](https://stackblitz.com/edit/angular-ivy-jrwgdz)
+12. [ngModel Examples](https://stackblitz.com/edit/angular-ivy-vkyefj)
+13. [Reactive Form Example](https://stackblitz.com/edit/angular-ivy-q2h53j)
 
 # Notes
 
