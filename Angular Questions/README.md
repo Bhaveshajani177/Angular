@@ -30,7 +30,7 @@
 
 ### 3. Print 'default name' if name = null or undefined or ''
 
-```html
+```ts
 <!-- * way - 1 -->
 <h3>{{ name ? name : 'default name' }}</h3>
 
