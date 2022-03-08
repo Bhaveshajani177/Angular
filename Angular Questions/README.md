@@ -57,3 +57,20 @@ export class BirthdayComponent {
   birthday = new Date(1987, 6, 18);
 }
 ```
+
+### 5. What is a custom pipe?
+- Apart from built-inn pipes, you can write your own custom pipe with the below key characteristics,
+- A pipe is a class decorated with pipe metadata @Pipe decorator, which you import from the core Angular library For example,
+```ts
+@Pipe({name: 'myCustomPipe'})
+```
+- The pipe class implements the PipeTransform interface's transform method that accepts an input value followed by optional parameters and returns the transformed value. The structure of pipeTransform would be as below,
+```ts
+interface PipeTransform {
+  transform(value: any, ...args: any[]): any
+}
+```
+- The @Pipe decorator allows you to define the pipe name that you'll use within template expressions. It must be a valid JavaScript identifier.
+```ts
+template: `{{someInputValue | myCustomPipe: someOtherValue}}`
+```
