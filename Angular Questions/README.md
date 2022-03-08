@@ -41,3 +41,19 @@
 <h3>{{ name === null || name === undefined || name === '' ? 'default name' : name }}</h3>
 
 ```
+
+### 4. How do you chain pipes?
+
+- You can chain pipes together in potentially useful combinations as per the needs. Let's take a birthday property which uses date pipe(along with parameter) and uppercase pipes as below
+```ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-birthday',
+  template: `<p>Birthday is {{  birthday | date:'fullDate' | uppercase}} </p>` // THURSDAY, JUNE 18, 1987
+})
+
+export class BirthdayComponent {
+  birthday = new Date(1987, 6, 18);
+}
+```
