@@ -1,0 +1,96 @@
+<!-- header -->
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Form</span>
+    </div>
+</nav>
+
+<div class="container mt-3">
+    <form [formGroup]="registrationForm" (ngSubmit)="registre()">
+        <!-- name -->
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input formControlName="name" type="text" id="name" placeholder="Enter name" class="form-control" />
+
+            <!-- validations -->
+            <div *ngIf="isFormSubmitted  || _registrationForm['name'].dirty || _registrationForm['name'].touched">
+                <!-- required validation -->
+                <div *ngIf="_registrationForm['name'].errors?.['required']" class="text-danger">
+                    Name is required
+                </div>
+
+                <!-- max length validation -->
+                <div *ngIf="_registrationForm['name'].errors?.['maxlength']" class="text-danger">
+                    Max length is {{ _registrationForm['name'].errors?.['maxlength'].requiredLength }}
+                </div>
+            </div>
+        </div>
+
+        <!-- email -->
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input formControlName="email" type="email" id="email" placeholder="Enter email" class="form-control" />
+            <!-- validations -->
+            <div *ngIf="isFormSubmitted || _registrationForm['email'].dirty || _registrationForm['email'].touched">
+                <!-- required validation -->
+                <div *ngIf="_registrationForm['email'].errors?.['required']" class="text-danger">
+                    Email is required
+                </div>
+
+                <!-- email validation -->
+                <div *ngIf="_registrationForm['email'].errors?.['email']" class="text-danger">
+                    Email is not valid
+                </div>
+            </div>
+        </div>
+
+        <!-- phone -->
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input formControlName="phone" id="phone" placeholder="Enter phone" mask="(000)000-0000" [dropSpecialCharacters]="false" class="form-control" />
+
+            <!-- validations -->
+            <div *ngIf="isFormSubmitted || _registrationForm['phone'].dirty || _registrationForm['phone'].touched">
+                <!-- required validation -->
+                <div *ngIf="_registrationForm['phone'].errors?.['required']" class="text-danger">
+                    Phone is required
+                </div>
+
+                <!-- min length validation -->
+                <div *ngIf="_registrationForm['phone'].errors?.['minlength']" class="text-danger">
+                    Min length is {{ _registrationForm['phone'].errors?.['minlength'].requiredLength }}
+                </div>
+
+                <!-- max length validation -->
+                <div *ngIf="_registrationForm['phone'].errors?.['maxlength']" class="text-danger">
+                    Max length is {{ _registrationForm['phone'].errors?.['maxlength'].requiredLength }}
+                </div>
+            </div>
+        </div>
+
+        <!-- gender -->
+        <div class="mb-3">
+            <!-- static -->
+            <label for="gender" class="form-label">Gender</label>
+            <div class="form-check">
+                <input formControlName="gender" type="radio" name="gender" value="male" id="male" class="form-check-input" />
+                <label for="male" class="form-check-label">Male</label>
+                <br>
+                <input formControlName="gender" type="radio" name="gender" value="female" id="female" class="form-check-input" />
+                <label for="female" class="form-check-label">Female</label>
+            </div>
+
+            <!-- validations -->
+            <div *ngIf="isFormSubmitted">
+                <!-- required validation -->
+                <div *ngIf="_registrationForm['gender'].errors?.['required']" class="text-danger">
+                    Gender is required
+                </div>
+            </div>
+        </div>
+
+        <!-- button  -->
+        <button class="btn btn-primary mt-3" type="submit">Submit</button>
+        <!-- <button class="btn btn-primary mt-3" type="submit" [disabled]="registrationForm.invalid">Submit</button> -->
+    </form>
+</div>

@@ -1,0 +1,26 @@
+<div>
+    <input [formControl]="control" [type]="type" [value]="value" [name]="name" [mask]="format" [placeholder]="placeholder" [dropSpecialCharacters]="false" [class]="class" [id]="id" />
+</div>
+
+<!-- validations -->
+<ng-container *ngIf="control.dirty || control.touched">
+    <!-- required validation -->
+    <div *ngIf="control.errors?.['required']" class="text-danger">
+        Field is required
+    </div>
+
+    <!-- max length validation -->
+    <div *ngIf="control.errors?.['maxlength']" class="text-danger">
+        Max length is {{ control.errors?.['maxlength'].requiredLength }}
+    </div>
+
+    <!-- email validation -->
+    <div *ngIf="control.errors?.['email']" class="text-danger">
+        Email is not valid
+    </div>
+
+    <!-- email validation -->
+    <div *ngIf="control.errors?.['minlength']" class="text-danger">
+        Min length is {{ control.errors?.['minlength'].requiredLength }}
+    </div>
+</ng-container>
