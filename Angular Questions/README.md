@@ -91,3 +91,9 @@ You need to subscribe to the observable and pass a callback that processes emitt
 ```ts
 this.myService.getConfig().subscribe(val => console.log(val));
 ```
+
+### 9. What is pipe in rxjs?
+- RxJS' pipe() is both a standalone function and a method on the Observable interface that can be used to combine multiple RxJS operators to compose asynchronous operations. 
+- The pipe() function takes one or more operators and returns an RxJS Observable.
+- pipe() is a function/method that is used to chain multiple RxJS operators while map() and filter() are operators that operate and transform the values of an Observable (sequence of values). They are similar to the map() and filter() methods of JavaScript arrays.
+
