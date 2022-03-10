@@ -74,3 +74,20 @@ The @Pipe decorator allows you to define the pipe name that you'll use within te
 ```ts
 template: `{{someInputValue | myCustomPipe: someOtherValue}}`
 ```
+
+### 6. What is reactive programming?
+- Reactive programming describes a design paradigm that relies on asynchronous programming logic to handle real-time updates to otherwise static content.
+- Reactive programming is an asynchronous programming paradigm concerned with data streams and the propagation of change.
+- An Angular application is a reactive system. The user clicks on a button, the application reacts to this event and updates the model. The model gets updated, the application propagates the changes through the component tree.
+- When handling events we often care about the time aspect, and that’s why Angular uses this type of reactive programming for managing events.
+
+### 7. What is the use of observable?
+- The basic usage of Observable in Angular is to create an instance to define a subscriber function.
+- Whenever a consumer wants to execute the function the subscribe() method is called. This function defines how to obtain messages and values to be published.
+- callback functions of observable are: **next** , **error**, **complete**
+
+### 8. How to get data from observable in angular?
+You need to subscribe to the observable and pass a callback that processes emitted values.
+```ts
+this.myService.getConfig().subscribe(val => console.log(val));
+```
