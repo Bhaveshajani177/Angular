@@ -170,3 +170,11 @@
 - specifies that Angular should provide the service in the root injector.
 - When you add a service provider to the root application injector, it’s available throughout the application.
 - You should always provide your service in the root injector unless there is a case where you want the service to be available only if the consumer imports a particular @NgModule.
+
+### rxjs:
+- Reactive Extensions for JavaScript
+- RxJS is a library for reactive programming using Observables, to make it easier to compose asynchronous or callback-based code.
+- The essential concepts in RxJS which solve async event management are:
+  - **Observable**: RxJS introduces Observables, a new Push system for JavaScript. An Observable is a Producer of multiple values, "pushing" them to Observers (Consumers).
+  - **Observer**: is a collection of callbacks that knows how to listen to values delivered by the Observable.
+  - **Operators**: are pure functions that enable a functional programming style of dealing with collections with operations like map, filter, concat, reduce, etc.
