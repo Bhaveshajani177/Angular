@@ -95,3 +95,5 @@
 - Arrow functions:
     - arrow function is only available in ES6 or ECMAScript 6.
     - Arrow syntax automatically binds **```this```** to the surrounding code’s context
+- **ng-container:** content is always rendered.
+- **ng-template:** content must be conditionlly rendered.
