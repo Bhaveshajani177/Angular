@@ -178,3 +178,22 @@
   - **Observable**: RxJS introduces Observables, a new Push system for JavaScript. An Observable is a Producer of multiple values, "pushing" them to Observers (Consumers).
   - **Observer**: is a collection of callbacks that knows how to listen to values delivered by the Observable.
   - **Operators**: are pure functions that enable a functional programming style of dealing with collections with operations like map, filter, concat, reduce, etc.
+  
+### RXJS Operators:
+#### 1. of:
+- Converts the arguments to an observable sequence.
+- Each argument becomes a next notification.
+#### 2. from:
+- Creates an Observable from an Array, an array-like object, a Promise, an iterable object, or an Observable-like object.
+- from converts various other objects and data types into Observables. 
+- It also converts a Promise, an array-like, or an iterable object into an Observable that emits the items in that promise, array, or iterable.
+- A String, in this context, is treated as an array of characters.
+#### 3. map:
+- Apply projection with each value from source.
+- Applies a given project function to each value emitted by the source Observable, and emits the resulting values as an Observable.
+- RxJS map() operator is a transformation operator used to transform the items emitted by an Observable by applying a function to each item.
+#### 4. tap:
+- Tap is designed to allow the developer a designated place to perform side effects.
+- Used when you want to affect outside state with a notification without altering the notification
+- Used to perform side-effects for notifications from the source observable.
+- This operator is generally used for debugging observables for the correct values or performing other side effects.
