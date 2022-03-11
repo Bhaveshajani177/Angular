@@ -14,6 +14,8 @@
 12. [From Array Example](https://stackblitz.com/edit/angular-ivy-jrwgdz)
 13. [ngModel Examples](https://stackblitz.com/edit/angular-ivy-vkyefj)
 14. [Reactive Form Example](https://stackblitz.com/edit/angular-ivy-q2h53j)
+15. [Simple Angular Form Validation](https://stackblitz.com/edit/angular-ivy-kspr5y)
+16. [RXJS Operators Examples](https://stackblitz.com/edit/angular-ivy-rrppjm?file=src%2Fapp%2Fapp.component.html)
 
 # Notes
 
@@ -95,3 +97,5 @@
 - Arrow functions:
     - arrow function is only available in ES6 or ECMAScript 6.
     - Arrow syntax automatically binds **```this```** to the surrounding code’s context
+- **ng-container:** content is always rendered.
+- **ng-template:** content must be conditionlly rendered.
