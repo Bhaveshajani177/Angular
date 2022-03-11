@@ -89,6 +89,51 @@
             </div>
         </div>
 
+        <div class="form-group row" formGroupName="passwords">
+            <!-- password -->
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input formControlName="password" type="password" id="password" placeholder="Enter password" class="form-control" />
+
+                <!-- validations -->
+                <div *ngIf="isFormSubmitted  || _passwords?.get('password')?.dirty || _passwords?.get('password')?.touched">
+                    <!-- required validation -->
+                    <div *ngIf="_passwords?.get('password')?.errors?.['required']" class="text-danger">
+                        Password is required
+                    </div>
+
+                    <!-- max length validation -->
+                    <div *ngIf="_passwords?.get('password')?.errors?.['maxlength']" class="text-danger">
+                        Max length is {{ _passwords?.get('password')?.errors?.['maxlength'].requiredLength }}
+                    </div>
+
+                    <!-- min length validation -->
+                    <div *ngIf="_passwords?.get('password')?.errors?.['minlength']" class="text-danger">
+                        Max length is {{ _passwords?.get('password')?.errors?.['minlength'].requiredLength }}
+                    </div>
+                </div>
+            </div>
+
+            <!-- confirm password -->
+            <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Confirm password</label>
+                <input formControlName="confirmPassword" type="password" id="confirmPassword" placeholder="Confirm your password" class="form-control" (input)="passwordShouldMatch($event)" />
+
+                <!-- validations -->
+                <div *ngIf="isFormSubmitted  || _passwords?.get('confirmPassword')?.dirty || _passwords?.get('confirmPassword')?.touched">
+                    <!-- required validation -->
+                    <div *ngIf="_passwords?.get('confirmPassword')?.errors?.['required']" class="text-danger">
+                        Confirm password is required
+                    </div>
+
+                    <!-- confirm password validation  -->
+                    <div *ngIf="_passwords?.get('confirmPassword')?.errors?.['pattern']" class="text-danger">
+                        Password does not match
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- button  -->
         <button class="btn btn-primary mt-3" type="submit">Submit</button>
         <!-- <button class="btn btn-primary mt-3" type="submit" [disabled]="registrationForm.invalid">Submit</button> -->
