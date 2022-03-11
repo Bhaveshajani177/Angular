@@ -93,7 +93,7 @@
             <!-- password -->
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input formControlName="password" type="password" id="password" placeholder="Enter password" class="form-control" />
+                <input formControlName="password" type="password" id="password" placeholder="Enter password" class="form-control" (focusout)="passwordShouldMatch()" />
 
                 <!-- validations -->
                 <div *ngIf="isFormSubmitted  || _passwords?.get('password')?.dirty || _passwords?.get('password')?.touched">
@@ -113,11 +113,11 @@
                     </div>
                 </div>
             </div>
-
+            <h1>{{_passwords?.get('confirmPassword')?.errors | json}}</h1>
             <!-- confirm password -->
             <div class="mb-3">
                 <label for="confirmPassword" class="form-label">Confirm password</label>
-                <input formControlName="confirmPassword" type="password" id="confirmPassword" placeholder="Confirm your password" class="form-control" (input)="passwordShouldMatch($event)" />
+                <input formControlName="confirmPassword" type="password" id="confirmPassword" placeholder="Confirm your password" class="form-control" ((input))="passwordShouldMatch()" />
 
                 <!-- validations -->
                 <div *ngIf="isFormSubmitted  || _passwords?.get('confirmPassword')?.dirty || _passwords?.get('confirmPassword')?.touched">

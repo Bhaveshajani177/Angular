@@ -51,12 +51,22 @@ export class AppComponent implements OnInit {
     return this.registrationForm.get('passwords');
   }
 
-  passwordShouldMatch(event: any) {
+  // confirm password validation
+  passwordShouldMatch() {
+    // consts
     const password = this._passwords?.get('password')?.value;
-    const confirmPassValue = event.target.value;
-    this._passwords
-      ?.get('confirmPassword')
-      ?.setValidators([Validators.required, Validators.pattern(password)]);
+    const confirmPassValue = this._passwords?.get('confirmPassword')?.value;
+
+    console.log(password);
+    console.log(confirmPassValue);
+
+    if (password !== confirmPassValue) {
+      console.log(password !== confirmPassValue);
+      this._passwords
+        ?.get('confirmPassword')
+        ?.setValidators([Validators.required, Validators.pattern(password)]);
+      this._passwords?.get('confirmPassword')?.updateValueAndValidity();
+    }
   }
 
   registre() {
