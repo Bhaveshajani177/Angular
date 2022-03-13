@@ -1,0 +1,54 @@
+<div>
+    <h5>Add Note</h5>
+</div>
+
+<form [formGroup]="noteForm" (ngSubmit)="addEditNote()">
+
+    <!-- title -->
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input formControlName="title" type="text" id="title" placeholder="Enter title" class="form-control" />
+
+        <!-- validations -->
+        <div *ngIf="isFormSubmitted  || _noteForm['title'].dirty || _noteForm['title'].touched">
+            <!-- required validation -->
+            <div *ngIf="_noteForm['title'].errors?.['required']" class="text-danger">
+                Title is required
+            </div>
+
+            <!-- max length validation -->
+            <div *ngIf="_noteForm['title'].errors?.['maxlength']" class="text-danger">
+                Maximum length is {{ _noteForm['title'].errors?.['maxlength'].requiredLength }}
+            </div>
+        </div>
+    </div>
+
+    <!-- note -->
+    <div class="mb-3">
+        <label for="note" class="form-label">Note</label>
+        <textarea formControlName="note" type="text" id="note" placeholder="Enter note" class="form-control" rows="3"></textarea>
+
+        <!-- validations -->
+        <div *ngIf="isFormSubmitted  || _noteForm['note'].dirty || _noteForm['note'].touched">
+            <!-- required validation -->
+            <div *ngIf="_noteForm['note'].errors?.['required']" class="text-danger">
+                Note is required
+            </div>
+
+            <!-- max length validation -->
+            <div *ngIf="_noteForm['note'].errors?.['maxlength']" class="text-danger">
+                Maximum length is {{ _noteForm['note'].errors?.['maxlength'].requiredLength }}
+            </div>
+        </div>
+    </div>
+
+    <!-- status -->
+    <div class="mb-3 form-check">
+        <input formControlName="status" type="checkbox" class="form-check-input" id="status">
+        <label class="form-check-label" for="status">Status</label>
+    </div>
+
+    <!-- button  -->
+    <button class="btn btn-primary mt-3 me-2" type="submit">{{showUpdateButton? "Edit Note":"Add Note"}}</button>
+    <button class="btn btn-primary mt-3" type="button" (click)="clearForm()">Clear</button>
+</form>

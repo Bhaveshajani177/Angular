@@ -1,0 +1,20 @@
+<h5>Notes List</h5>
+
+<!-- note card list -->
+<div *ngFor="let note of notes.slice().reverse()" [ngClass]="note.status ? 'lightGreen':'lightRed'" class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-6">
+                <h5 class="vh-center">{{note.title}}</h5>
+            </div>
+            <div class="col-6 text-end">
+                <button type="button" class="btn btn-primary me-2" (click)="editNote(note)">Edit Note</button>
+                <button type="button" class="btn btn-danger" (click)="deleteNote(note.id)">Delete Note</button>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text">{{note.note}}</p>
+    </div>
+</div>

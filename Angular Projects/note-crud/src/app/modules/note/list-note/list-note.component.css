@@ -1,0 +1,18 @@
+.lightGreen {
+    background-color: lightgreen;
+    margin-bottom: 5px;
+}
+
+.lightRed {
+    background-color: tomato;
+    margin-bottom: 5px;
+}
+
+.card-title {
+    margin-bottom: 0;
+}
+
+.vh-center {
+    position: relative;
+    top: 5px;
+}

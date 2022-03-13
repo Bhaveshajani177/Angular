@@ -1,0 +1,23 @@
+<!-- header -->
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Notes</span>
+
+        <div class="text-end navbar-brand">
+            <ul class="list-inline">
+                <li>
+                    <a (click)="isShowNoteList = true">Home</a>
+                </li>
+                <li>
+                    <a (click)="isShowNoteList = false">Add Note</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- body -->
+<div class="container-fluid mt-3">
+    <app-list-note *ngIf="isShowNoteList"></app-list-note>
+    <app-add-adit-note *ngIf="!isShowNoteList"></app-add-adit-note>
+</div>
