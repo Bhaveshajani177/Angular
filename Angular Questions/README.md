@@ -97,3 +97,16 @@ this.myService.getConfig().subscribe(val => console.log(val));
 - The pipe() function takes one or more operators and returns an RxJS Observable.
 - pipe() is a function/method that is used to chain multiple RxJS operators while map() and filter() are operators that operate and transform the values of an Observable (sequence of values). They are similar to the map() and filter() methods of JavaScript arrays.
 
+### 10. How to sort array of object by date?
+Sort by date (Ascending):
+```ts
+myArr.sort((a, b)=> {return new Date(a.CREATE_TS) - new Date(b.CREATE_TS)})
+```
+Sort by date (Descending):
+```ts
+myArr.sort((a, b)=> {return new Date(b.CREATE_TS) - new Date(a.CREATE_TS)})
+```
+Sort by time:
+```ts
+this.data.sort((a, b) => new Date(b.date1).getTime() - new Date(a.date1).getTime());
+```
