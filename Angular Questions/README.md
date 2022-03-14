@@ -110,3 +110,18 @@ Sort by time:
 ```ts
 this.data.sort((a, b) => new Date(b.date1).getTime() - new Date(a.date1).getTime());
 ```
+
+### 11. Error says localStorage.getItem() can return either a string or null.
+JSON.parse() requires a string, so you should test the result of localStorage.getItem() before you try to use it.
+```ts
+this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+```
+OR
+```ts
+const userJson = localStorage.getItem('currentUser');
+this.currentUser = userJson !== null ? JSON.parse(userJson) : new User();
+```
+If you are confident that the localStorage.getItem() call can never return null you can use the non-null assertion operator to tell typescript that you know what you are doing:
+```ts
+this.currentUser = JSON.parse(localStorage.getItem('currentUser')!);
+```
