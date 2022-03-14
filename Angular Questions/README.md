@@ -125,3 +125,24 @@ If you are confident that the localStorage.getItem() call can never return null 
 ```ts
 this.currentUser = JSON.parse(localStorage.getItem('currentUser')!);
 ```
+
+### 12. How to update local storage data?
+You cant update specific value in localstorage. you have to update whole object because it stores it as Key:Value pair. Localstorage values are saved as strings. So you have to save it like this:
+```ts
+var kittens = [
+    {"name": "abc", "color": "white" }, 
+    {"name": "def", "color": "black" }
+]
+
+// Save array in local storage as string
+localStorage.setItem("kittens",JSON.stringify(kittens));
+
+// Get back item "kittens" from local storage
+var kittensFromLocalStorage = JSON.parse(localStorage.getItem("kittens"));
+
+// Change value
+kittensFromLocalStorage[1].name = "jasmine";
+
+// Save the new item with updated value
+localStorage.setItem("kittens",JSON.stringify(kittensFromLocalStorage));
+```
