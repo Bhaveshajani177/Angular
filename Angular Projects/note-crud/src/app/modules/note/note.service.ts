@@ -33,7 +33,28 @@ export class NoteService {
   }
 
   // update note
-  updateNote(note: INote) {}
+  updateNote(noteDetails: INote) {
+    try {
+      // find index
+      const index = this.notes.findIndex((note) => {
+        return note.id === noteDetails.id;
+      });
+
+      // update array
+      this.notes[index].title = noteDetails.title;
+      this.notes[index].note = noteDetails.note;
+      this.notes[index].status = noteDetails.status;
+      this.notes[index].createdAt = noteDetails.createdAt;
+      this.notes[index].updatedAt = noteDetails.updatedAt;
+
+      // store data to local Storage
+      localStorage.setItem('notes', JSON.stringify(this.notes));
+
+      return true;
+    } catch {
+      return false;
+    }
+  }
 
   // delete note
   deleteNote(noteId: string) {

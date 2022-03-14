@@ -1,7 +1,7 @@
 <h5>Notes List</h5>
 
 <!-- note card list -->
-<div *ngFor="let note of notes.slice().reverse()" [ngClass]="note.status ? 'lightGreen':'lightRed'" class="card">
+<div *ngFor="let note of notes" [ngClass]="note.status ? 'lightGreen':'lightRed'" class="card">
     <div class="card-header">
         <div class="row">
             <div class="col-6">
@@ -9,12 +9,31 @@
             </div>
             <div class="col-6 text-end">
                 <button type="button" class="btn btn-primary me-2" (click)="editNote(note)">Edit Note</button>
-                <button type="button" class="btn btn-danger" (click)="deleteNote(note.id)">Delete Note</button>
+                <button *ngIf="!note.status" type="button" class="btn btn-danger" (click)="deleteNote(note.id)">Delete
+          Note</button>
             </div>
         </div>
     </div>
     <div class="card-body">
         <h5 class="card-title"></h5>
         <p class="card-text">{{note.note}}</p>
+
+        <div class="text-end">
+            <h6 class=" text-12 ">
+                <strong>Created On: </strong>{{note.createdAt | date:'short'}},
+                <strong>Updated On: </strong>{{note.updatedAt | date:'short'}}
+            </h6>
+        </div>
+    </div>
+</div>
+
+<!-- if note list is empty -->
+<div class="card " *ngIf="!this.notes.length ">
+    <div class="card-header ">
+        <div class="row ">
+            <div class="col-6 ">
+                Data Not Available
+            </div>
+        </div>
     </div>
 </div>
