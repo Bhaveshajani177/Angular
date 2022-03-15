@@ -32,10 +32,10 @@ export class AddAditNoteComponent implements OnInit {
   ngOnInit(): void {
     // check add note or edit note
     if (this.noteDetails.id) {
-      this.showUpdateButton = true;
+      // this.showUpdateButton = true;
       this.prepareNoteForm(this.noteDetails);
     } else {
-      this.showUpdateButton = false;
+      // this.showUpdateButton = false;
     }
   }
 
@@ -66,7 +66,7 @@ export class AddAditNoteComponent implements OnInit {
 
   // add new notes
   addEditNote() {
-    if (this.showUpdateButton) {
+    if (this.noteDetails.id) {
       // ------- update existing note -------
       this.isFormSubmitted = true;
       if (this.noteForm.valid) {

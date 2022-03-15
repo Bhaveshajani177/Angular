@@ -9,7 +9,7 @@ export class NoteService {
   notes: INote[] = [];
 
   constructor() {
-    this.notes = JSON.parse(localStorage.getItem('notes') || '{}');
+    this.notes = JSON.parse(localStorage.getItem('notes') || '[]');
   }
 
   // list note
@@ -60,17 +60,22 @@ export class NoteService {
   deleteNote(noteId: string) {
     try {
       // find index
-      const index = this.notes.findIndex((note) => {
-        return note.id === noteId;
-      });
+      const index =
+        this.notes.findIndex((note) => {
+          return note.id === noteId;
+        }) || 0;
 
-      // remove note
-      this.notes.splice(index, 1);
+      if (index || index >= 0) {
+        // remove note
+        this.notes.splice(index, 1);
 
-      // store data to local Storage
-      localStorage.setItem('notes', JSON.stringify(this.notes));
+        // store data to local Storage
+        localStorage.setItem('notes', JSON.stringify(this.notes));
 
-      return true;
+        return true;
+      } else {
+        return false;
+      }
     } catch {
       return false;
     }

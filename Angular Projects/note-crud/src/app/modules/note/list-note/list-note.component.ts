@@ -29,13 +29,14 @@ export class ListNoteComponent implements OnInit {
   // get note list
   getNoteList() {
     const noteData = this.noteService.getNotes();
-
-    // sort note by updated date
-    this.notes = noteData.sort(
-      (noteA: any, noteB: any) =>
-        new Date(noteB.updatedAt).getTime() -
-        new Date(noteA.updatedAt).getTime()
-    );
+    if (Object.keys(noteData).length) {
+      // sort note by updated date
+      this.notes = noteData.sort(
+        (noteA: any, noteB: any) =>
+          new Date(noteB.updatedAt).getTime() -
+          new Date(noteA.updatedAt).getTime()
+      );
+    }
   }
 
   // edit existing note
