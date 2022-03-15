@@ -66,33 +66,31 @@ export class AddAditNoteComponent implements OnInit {
 
   // add new notes
   addEditNote() {
-    if (this.noteDetails.id) {
+    this.isFormSubmitted = true;
+    if (this.noteDetails.id && this.noteForm.valid) {
       // ------- update existing note -------
-      this.isFormSubmitted = true;
-      if (this.noteForm.valid) {
-        // create note object
-        const note: INote = {
-          id: this.noteDetails.id,
-          title: this.noteForm.value.title,
-          note: this.noteForm.value.note,
-          status: this.noteForm.value.status,
-          createdAt: this.noteDetails.createdAt,
-          updatedAt: new Date(),
-        };
 
-        // edit note
-        const response = this.noteService.updateNote(note);
-        if (response) {
-          this.clearForm();
-          this.toastr.success('Data Updated Successfully', 'Successfully!');
-          this.gotoNoteList.emit(true);
-        } else {
-          this.toastr.error('Data Not Updated', 'Update Failure!');
-        }
+      // create note object
+      const note: INote = {
+        id: this.noteDetails.id,
+        title: this.noteForm.value.title,
+        note: this.noteForm.value.note,
+        status: this.noteForm.value.status,
+        createdAt: this.noteDetails.createdAt,
+        updatedAt: new Date(),
+      };
+
+      // edit note
+      const response = this.noteService.updateNote(note);
+      if (response) {
+        this.clearForm();
+        this.toastr.success('Data Updated Successfully', 'Successfully!');
+        this.gotoNoteList.emit(true);
+      } else {
+        this.toastr.error('Data Not Updated', 'Update Failure!');
       }
     } else {
       // ------- create new note -------
-      this.isFormSubmitted = true;
       if (this.noteForm.valid) {
         // create note object
         const note: INote = {
