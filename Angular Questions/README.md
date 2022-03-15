@@ -146,3 +146,50 @@ kittensFromLocalStorage[1].name = "jasmine";
 // Save the new item with updated value
 localStorage.setItem("kittens",JSON.stringify(kittensFromLocalStorage));
 ```
+
+### 13. How do I test for an empty JavaScript object?
+```ts
+Object.keys(obj).length === 0;
+```
+
+### 14. How to prevent input type="number" getting negative values?
+```html
+<input type="number" min="0" oninput="this.value = Math.abs(this.value)">
+```
+
+### 15. How can I use "*ngIf else"?
+```html
+<div *ngIf="isValid; else templateName">
+  If isValid is true
+</div>
+
+<ng-template #templateName>
+  If isValid is false
+</ng-template>
+```
+
+### 16. How to use If with Then?
+```html
+<div *ngIf="isValid; then templateName">
+  Here is never showing
+</div>
+
+<ng-template #templateName>
+  If isValid is true
+</ng-template>
+```
+
+### 17. How to use If with Then and Else?
+```html
+<div *ngIf="isValid; then thenTemplateName else elseTemplateName">
+  Here is never showing
+</div>
+
+<ng-template #thenTemplateName>
+  If isValid is true
+</ng-template>
+
+<ng-template #elseTemplateName>
+  If isValid is false
+</ng-template>
+```

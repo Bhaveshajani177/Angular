@@ -197,3 +197,13 @@
 - Used when you want to affect outside state with a notification without altering the notification
 - Used to perform side-effects for notifications from the source observable.
 - This operator is generally used for debugging observables for the correct values or performing other side effects.
+#### 5. mergeAll:
+- mergeAll combines a number of inner observable streams and concurrently emits all values from every input stream.
+#### 6. mergeMap:
+- Merge map is often get used when the requirement is to merge response from two observables. This operator return an observable after merging the response from two observables, things to notice here is that second observable does not execute until merged observable emits some response.
+- This operator is best used when you wish to flatten an inner observable but want to manually control the number of inner subscriptions.
+- .mergeMap() lets you flatten a higher-order Observable into a single stream.
+#### 7. take:
+- When you are interested in only the first emission, you want to use take.
+- take returns an Observable that emits only the first count values emitted by the source Observable. If the source emits fewer than count values then all of its values are emitted. After that, it completes, regardless if the source completes.
+- take is the opposite of skip where take will take the first n number of emissions while skip will skip the first n number of emissions.
