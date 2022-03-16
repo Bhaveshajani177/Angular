@@ -193,3 +193,59 @@ Object.keys(obj).length === 0;
   If isValid is false
 </ng-template>
 ```
+
+### 18. what is firebase?
+- Firebase is a platform developed by Google for creating mobile and web applications.
+- Firebase is categorized as a NoSQL database program, which stores data in JSON-like documents.
+- In Firebase, a document is a set of key-value pairs defined by a schema. A group of documents makes up a collection.
+
+### 19. Key Features of firebase
+
+- Authentication:
+  - It supports authentication using passwords, phone numbers, Google, Facebook, Twitter, and more.
+  - The Firebase Authentication (SDK) can be used to manually integrate one or more sign-in methods into an app.
+
+- Realtime database:
+  - Data is synced across all clients in realtime and remains available even when an app goes offline.
+
+- Hosting:
+  - Firebase Hosting provides fast hosting for a web app; content is cached into content delivery networks worldwide.
+
+- Test lab:
+  - The application is tested on virtual and physical devices located in Google’s data centers.
+
+- Notifications:
+  - Notifications can be sent with firebase with no additional coding.
+
+### 20. Is Firebase better than SQL?
+- Compared to Firebase, MySQL is better for multi-row transactions.
+- On the other hand, Firebase is a satisfactory choice when it comes to managing huge data sets because NoSQL horizontally scales data and it is much faster than MySQL.
+
+### 21. what is Realtime database in firebase?
+- Firebase Realtime database is stuctured as a JSON tree.
+- In the Realtime database, we can only sort or filter on a single property within a single query, not both sort and filter on a property.
+- If you want to fetch data in descending order then Cloud FireStore is very useful for you. For the Realtime database, there is no query feature available.
+- In the Realtime Database, We need to validate data separately using the validate rule.
+
+### 22. what is Cloud Firestore in firebase?
+- Cloud Firestore stores data in documents (document is a set of key-value pairs) and collections (collections of documents).
+- Cloud FireStore, You can chain filters and combine filtering and sorting on a property in a single query.
+- If you want to fetch data in descending order then Cloud FireStore is very useful for you.
+- In the Cloud FireStore, data validation happens automatically.
+
+### 23. Difference between ng add Vs npm install
+**ng add:**
+- Will use your package manager to download new dependencies and invoke an installation script which can update your project with configuration changes (In angular.json file as well), add additional dependencies (e.g. polyfills if needed), or scaffold package-specific initialization code.
+- For example you run the command ng add @angular/material — Install, it will automatically install the package and configure in angular.json file too.
+
+**npm install:**
+- Whereas npm install will only install your package into your project but will not configure in order to use.
+- For example you run the command npm install jquery it will install jQuery in your project but you need to configure manually in .angular-cli.json file.
+
+### 24. What is Reactive programming?
+- Reactive programming describes a design paradigm that relies on asynchronous programming logic to handle real-time updates to otherwise static content. 
+
+### 25. How to scroll top.
+```ts
+window.scroll(0,0);
+```
