@@ -15,7 +15,7 @@
 13. [ngModel Examples](https://stackblitz.com/edit/angular-ivy-vkyefj)
 14. [Reactive Form Example](https://stackblitz.com/edit/angular-ivy-q2h53j)
 15. [Simple Angular Form Validation](https://stackblitz.com/edit/angular-ivy-kspr5y)
-16. [RXJS Operators Examples](https://stackblitz.com/edit/angular-ivy-rrppjm?file=src%2Fapp%2Fapp.component.html)
+<!-- 16. [RXJS Operators Examples](https://stackblitz.com/edit/angular-ivy-rrppjm?file=src%2Fapp%2Fapp.component.html) -->
 
 # Notes
 
