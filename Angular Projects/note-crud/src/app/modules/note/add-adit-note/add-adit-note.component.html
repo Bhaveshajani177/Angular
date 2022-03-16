@@ -1,5 +1,5 @@
 <div>
-    <h5>Add Note</h5>
+    <h5>{{this.noteDetails.id? 'Edit Note':'Add Note'}}</h5>
 </div>
 
 <form [formGroup]="noteForm" (ngSubmit)="addEditNote()">

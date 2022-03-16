@@ -8,13 +8,12 @@ export class NoteService {
   // notes array
   notes: INote[] = [];
 
-  constructor() {
-    this.notes = JSON.parse(localStorage.getItem('notes') || '[]');
-  }
+  constructor() {}
 
   // list note
   getNotes() {
-    return this.notes;
+    return this.notes = JSON.parse(localStorage.getItem('notes') || '[]');
+    // return this.notes;
   }
 
   // add note
