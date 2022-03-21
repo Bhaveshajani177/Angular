@@ -1,4 +1,4 @@
-# Shortcut list of vsCode
+# Shortcut key list of vsCode
 
 |Key|Descriptions|
 |-----|-----|
