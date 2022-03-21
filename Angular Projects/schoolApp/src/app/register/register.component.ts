@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Regex } from '../utility/regex';
 import { AuthService } from '../services/auth.service';
+import { ToastrService } from 'ngx-toastr';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +18,12 @@ export class RegisterComponent implements OnInit {
   // FormGroups
   registrationForm!: FormGroup;
 
-  constructor(private regex: Regex, private authService: AuthService) {
+  constructor(
+    private regex: Regex,
+    private authService: AuthService,
+    private toastr: ToastrService,
+    private ngxService: NgxUiLoaderService
+  ) {
     this.initializeForm();
   }
 
@@ -72,6 +79,8 @@ export class RegisterComponent implements OnInit {
 
   // new registration method
   async register() {
+    this.ngxService.start();
+
     this.isFormSubmitted = true;
     this.inSubmission = true;
 
@@ -86,12 +95,14 @@ export class RegisterComponent implements OnInit {
       }
 
       // if request successful
-      alert('Success! Your account has been created.');
+      this.toastr.success('Your account has been created', 'Success!');
       this.resetRegisterForm();
+      this.ngxService.stop();
     } else {
       // if form not valid
-      alert('Form is not valid');
+      this.toastr.error('Form is not valid', 'Failed!');
       this.inSubmission = false;
+      this.ngxService.stop();
     }
   }
 
