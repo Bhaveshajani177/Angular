@@ -15,3 +15,5 @@
 |Ctrl + Home | Scroll to the top|
 |Ctrl + End | Scroll to the bottom|
 |Clrl + Alt + ↓ | duplicate line below|
+|Shift + 1|Select line(start to end)|
+|Shift + 7|Select line(end to start)|
