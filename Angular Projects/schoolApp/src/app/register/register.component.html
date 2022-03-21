@@ -1,11 +1,5 @@
-<!-- header -->
-<nav class="navbar navbar-dark bg-dark">
-    <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">Form</span>
-    </div>
-</nav>
-
 <div class="container mt-3">
+    <h4>Registration Form</h4>
     <form [formGroup]="registrationForm" (ngSubmit)="register()">
         <!-- name -->
         <div class="mb-3">
@@ -47,7 +41,7 @@
         <!-- phone -->
         <div class="mb-3">
             <label for="phone" class="form-label">Phone</label>
-            <input formControlName="phone" id="phone" placeholder="Enter phone" mask="(000)000-0000" [dropSpecialCharacters]="false" class="form-control" />
+            <input formControlName="phone" id="phone" placeholder="Enter phone" class="form-control" />
 
             <!-- validations -->
             <div *ngIf="isFormSubmitted || _registrationForm['phone'].dirty || _registrationForm['phone'].touched">
@@ -64,6 +58,11 @@
                 <!-- max length validation -->
                 <div *ngIf="_registrationForm['phone'].errors?.['maxlength']" class="text-danger">
                     Max length is {{ _registrationForm['phone'].errors?.['maxlength'].requiredLength }}
+                </div>
+
+                <!-- pattern validation -->
+                <div *ngIf="_registrationForm['phone'].errors?.['pattern']" class="text-danger">
+                    Enter only numbers
                 </div>
             </div>
         </div>
@@ -109,11 +108,11 @@
 
                     <!-- min length validation -->
                     <div *ngIf="_passwords?.get('password')?.errors?.['minlength']" class="text-danger">
-                        Max length is {{ _passwords?.get('password')?.errors?.['minlength'].requiredLength }}
+                        Min length is {{ _passwords?.get('password')?.errors?.['minlength'].requiredLength }}
                     </div>
                 </div>
             </div>
-            <h1>{{_passwords?.get('confirmPassword')?.errors | json}}</h1>
+
             <!-- confirm password -->
             <div class="mb-3">
                 <label for="confirmPassword" class="form-label">Confirm password</label>
@@ -135,7 +134,7 @@
         </div>
 
         <!-- button  -->
-        <button class="btn btn-primary mt-3" type="submit">Submit</button>
+        <button [disabled]="inSubmission" class="btn btn-primary mt-3" type="submit">Submit</button>
         <!-- <button class="btn btn-primary mt-3" type="submit" [disabled]="registrationForm.invalid">Submit</button> -->
     </form>
 </div>
