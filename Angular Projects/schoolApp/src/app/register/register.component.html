@@ -4,7 +4,7 @@
         <!-- name -->
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
-            <input formControlName="name" type="text" id="name" placeholder="Enter name" class="form-control" />
+            <input formControlName="name" type="text" id="name" placeholder="Name" class="form-control" />
 
             <!-- validations -->
             <div *ngIf="isFormSubmitted  || _registrationForm['name'].dirty || _registrationForm['name'].touched">
@@ -15,7 +15,7 @@
 
                 <!-- max length validation -->
                 <div *ngIf="_registrationForm['name'].errors?.['maxlength']" class="text-danger">
-                    Max length is {{ _registrationForm['name'].errors?.['maxlength'].requiredLength }}
+                    The maximum length for this field is {{ _registrationForm['name'].errors?.['maxlength'].requiredLength }} characters
                 </div>
             </div>
         </div>
@@ -23,7 +23,7 @@
         <!-- email -->
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input formControlName="email" type="email" id="email" placeholder="Enter email" class="form-control" />
+            <input formControlName="email" type="email" id="email" placeholder="Email" class="form-control" />
             <!-- validations -->
             <div *ngIf="isFormSubmitted || _registrationForm['email'].dirty || _registrationForm['email'].touched">
                 <!-- required validation -->
@@ -33,7 +33,7 @@
 
                 <!-- email validation -->
                 <div *ngIf="_registrationForm['email'].errors?.['email']" class="text-danger">
-                    Email is not valid
+                    Please enter a valid email
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@
         <!-- phone -->
         <div class="mb-3">
             <label for="phone" class="form-label">Phone</label>
-            <input formControlName="phone" id="phone" placeholder="Enter phone" class="form-control" />
+            <input formControlName="phone" id="phone" placeholder="Phone" class="form-control" />
 
             <!-- validations -->
             <div *ngIf="isFormSubmitted || _registrationForm['phone'].dirty || _registrationForm['phone'].touched">
@@ -52,17 +52,17 @@
 
                 <!-- min length validation -->
                 <div *ngIf="_registrationForm['phone'].errors?.['minlength']" class="text-danger">
-                    Min length is {{ _registrationForm['phone'].errors?.['minlength'].requiredLength }}
+                    The minimum length for this field is {{ _registrationForm['phone'].errors?.['minlength'].requiredLength }} characters
                 </div>
 
                 <!-- max length validation -->
                 <div *ngIf="_registrationForm['phone'].errors?.['maxlength']" class="text-danger">
-                    Max length is {{ _registrationForm['phone'].errors?.['maxlength'].requiredLength }}
+                    The maximum length for this field is {{ _registrationForm['phone'].errors?.['maxlength'].requiredLength }} characters
                 </div>
 
                 <!-- pattern validation -->
                 <div *ngIf="_registrationForm['phone'].errors?.['pattern']" class="text-danger">
-                    Enter only numbers
+                    Please enter numeric values
                 </div>
             </div>
         </div>
@@ -92,7 +92,7 @@
             <!-- password -->
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input formControlName="password" type="password" id="password" placeholder="Enter password" class="form-control" (focusout)="passwordShouldMatch()" />
+                <input formControlName="password" type="password" id="password" placeholder="Password" class="form-control" (focusout)="passwordShouldMatch()" />
 
                 <!-- validations -->
                 <div *ngIf="isFormSubmitted  || _passwords?.get('password')?.dirty || _passwords?.get('password')?.touched">
@@ -103,12 +103,12 @@
 
                     <!-- max length validation -->
                     <div *ngIf="_passwords?.get('password')?.errors?.['maxlength']" class="text-danger">
-                        Max length is {{ _passwords?.get('password')?.errors?.['maxlength'].requiredLength }}
+                        The maximum length for this field is {{ _passwords?.get('password')?.errors?.['maxlength'].requiredLength }} characters
                     </div>
 
                     <!-- min length validation -->
                     <div *ngIf="_passwords?.get('password')?.errors?.['minlength']" class="text-danger">
-                        Min length is {{ _passwords?.get('password')?.errors?.['minlength'].requiredLength }}
+                        The minimum length for this field is {{ _passwords?.get('password')?.errors?.['minlength'].requiredLength }} characters
                     </div>
                 </div>
             </div>
@@ -116,7 +116,7 @@
             <!-- confirm password -->
             <div class="mb-3">
                 <label for="confirmPassword" class="form-label">Confirm password</label>
-                <input formControlName="confirmPassword" type="password" id="confirmPassword" placeholder="Confirm your password" class="form-control" ((input))="passwordShouldMatch()" />
+                <input formControlName="confirmPassword" type="password" id="confirmPassword" placeholder="Confirm password" class="form-control" ((input))="passwordShouldMatch()" />
 
                 <!-- validations -->
                 <div *ngIf="isFormSubmitted  || _passwords?.get('confirmPassword')?.dirty || _passwords?.get('confirmPassword')?.touched">
@@ -127,7 +127,7 @@
 
                     <!-- confirm password validation  -->
                     <div *ngIf="_passwords?.get('confirmPassword')?.errors?.['pattern']" class="text-danger">
-                        Password does not match
+                        Password does not match with password field
                     </div>
                 </div>
             </div>
