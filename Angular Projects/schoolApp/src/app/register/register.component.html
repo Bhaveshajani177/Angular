@@ -35,6 +35,12 @@
                 <div *ngIf="_registrationForm['email'].errors?.['email']" class="text-danger">
                     Please enter a valid email
                 </div>
+
+                <!-- email taken -->
+                <div *ngIf="_registrationForm['email'].errors?.['emailTaken']" class="text-danger">
+                    Email taken, Please try another email
+                </div>
+
             </div>
         </div>
 

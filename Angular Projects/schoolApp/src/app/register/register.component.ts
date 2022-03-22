@@ -4,6 +4,8 @@ import { Regex } from '../utility/regex';
 import { AuthService } from '../services/auth.service';
 import { ToastrService } from 'ngx-toastr';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
+import { EmailValidatorService } from '../services/email-validator/email-validator.service';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-register',
@@ -22,7 +24,9 @@ export class RegisterComponent implements OnInit {
     private regex: Regex,
     private authService: AuthService,
     private toastr: ToastrService,
-    private ngxService: NgxUiLoaderService
+    private ngxService: NgxUiLoaderService,
+    private emailValidatorService: EmailValidatorService,
+    private auth: AngularFireAuth
   ) {
     this.initializeForm();
   }
@@ -36,7 +40,11 @@ export class RegisterComponent implements OnInit {
         Validators.required,
         Validators.maxLength(100),
       ]),
-      email: new FormControl('', [Validators.required, Validators.email]),
+      email: new FormControl(
+        '',
+        [Validators.required, Validators.email],
+        [this.emailValidatorService.validate]
+      ),
       phone: new FormControl('', [
         Validators.required,
         Validators.maxLength(10),
