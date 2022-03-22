@@ -207,3 +207,92 @@
 - When you are interested in only the first emission, you want to use take.
 - take returns an Observable that emits only the first count values emitted by the source Observable. If the source emits fewer than count values then all of its values are emitted. After that, it completes, regardless if the source completes.
 - take is the opposite of skip where take will take the first n number of emissions while skip will skip the first n number of emissions.
+
+### what is `<base href="/">`?
+- basePath is the URL prefix for all API paths, relative to the host root.
+- It must start with a leading slash / . If basePath is not specified, it defaults to / , that is, all paths start at the host root.
+- This guide works with a CLI-generated Angular application. If you are working manually, make sure that you have <base href="/"> in the <head> of your index.html file. This assumes that the app folder is the application root, and uses "/".
+  
+### what is Routes and Route?
+- Route is interface.
+- A configuration object that defines a single route. A set of routes are collected in a Routes array to define a Router configuration.
+- The router attempts to match segments of a given URL against each route, using the configuration options defined in this object.
+- Supports static, parameterized, redirect, and wildcard routes, as well as custom route data and resolve methods.
+- Route Properties:
+```ts
+interface Route {
+	path?: string
+	pathMatch?: string
+	matcher?: UrlMatcher
+	component?: Type<any>
+	redirectTo?: string
+	outlet?: string
+	canActivate?: any[]
+	canActivateChild?: any[]
+	canDeactivate?: any[]
+	canLoad?: any[]
+	data?: Data
+	resolve?: ResolveData
+	children?: Routes
+	loadChildren?: LoadChildren
+	runGuardsAndResolvers?: RunGuardsAndResolvers
+}
+```
+### what is RouterModule.forRoot(routes)?
+- The forRoot static method is the method that configures the root routing module for your app. When you call RouterModule.forRoot(routes), you are asking Angular to instantiate an instance of the Router class globally. Just like Angular creates a new base AppModule to import all of your feature modules, it also provides the AppRoutingModule to import all of your child routes.
+- In the new app that you have created via the Angular CLI, the forRoot method is actually already being used inside of the app-routing.module.ts. In your app, you only want to use the forRoot method once. This is because this method tells Angular to instantiate an instance of the Router class under the hood, and there can be only one router in your app. The forRoot static method is a part of a pattern that ensures that you are using singleton classes.
+
+### what is RouterModule.forChild(routes)?
+- When you are using the forChild static method, you are basically telling Angular, "There is already a Router instance available in the app so please just register all of these routes with that instance." The forChild method is the method that you will call to register routes throughout your app and you will use it inside of the child, routing modules that you create. The forChild static method is useful because it plays a core part of Angular module functionality by allowing you to maintain separation of concerns within your app.
+
+### RouterOutlet
+- Acts as a placeholder that Angular dynamically fills based on the current router state.
+- Each outlet can have a unique name, determined by the optional name attribute.
+- The name cannot be set or changed dynamically. If not set, default value is "primary".
+- [read more](https://angular.io/api/router/RouterOutlet)
+  
+### what is RouterLink?
+- When applied to an element in a template, makes that element a link that initiates navigation to a route.
+- Navigation opens one or more routed components in one or more <router-outlet> locations on the page.
+- [read more](https://angular.io/api/router/RouterLink#description)
+  
+### what is RouterLinkActive?
+- Tracks whether the linked route of an element is currently active, and allows you to specify one or more CSS classes to add to the element when the linked route is active.
+- [read more](https://angular.io/api/router/RouterLinkActive#description)
+
+### How to generate routing module?
+```cmd
+ng g module module_name --routing
+```
+  
+### Router.navigateByUrl
+- Router.navigateByUrl is similar to Router.navigate, except that a string is passed in instead of URL segments. The navigation should be absolute and start with a /.
+- Use this method if you want to navigate to a URL by using the absolute path. The first argument is a string containing the complete URL.
+- NavigateByUrl Method always uses the absolute path
+
+### Router.navigate
+- You pass in an array of URL segments to Router.navigate.
+- Use this method, if you want to Navigate to a route using the link parameters array. The first argument to the navigate method is link parameters array, which is similar to what we provide while defining the routerlink directive
+- Navigate Method always uses the absolute path unless you provide a starting point.
+
+### Relative and Absolute Paths in Routes.
+- Hence, We can use directory like syntaxes like add / (root node) , ./ (current node) or ../ (Parent node) in the link parameters array
+- The First segment of the link parameters array can be prepended with “/“, “./“, or “../“
+- If the First segment of the route starts with “/“, then the path is considered to be Absolute path
+- If the First segment begins with “./” or it does not begin with a slash, then the path is considered to be the relative path.
+- And if the First segment begins with “. ./“, then the path is relative to the parent route. (one level up)
+
+### pathMatch='full'
+- pathMatch: 'full' means, that the whole URL path needs to match and is consumed by the route matching algorithm.
+- Angular will search for the exact path(in the URL) in the routes array.
+```ts
+{ path: 'home', component: HomeComponent, pathMatch: 'full' }
+```
+- If you have configured a route like above, Angular will check, only if full path in browser URL is exactly equal to 'home' (example.com/home), then that component/module will be triggered. When you try navigating to 'home/child-route', the full path is now not matching with 'home', and this gives error.
+- use pathMatch: 'prefix', especially if that route path is supposed to load a module dynamically, which will have other routes
+- never use pathMatch:'full' when it has child routes or nested <router-outlet>
+  
+### pathMatch: 'prefix'
+- means, the first route where the path matches the start of the URL is chosen, but then the route matching algorithm is continuing searching for matching child routes where the rest of the URL matches.
+- pathMatch = 'prefix' tells the router to match the redirect route when the remaining URL begins with the redirect route's prefix path.
+- Angular will search for a prefix of the path(in the URL) in the routes array.
