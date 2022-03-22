@@ -208,7 +208,7 @@
 - take returns an Observable that emits only the first count values emitted by the source Observable. If the source emits fewer than count values then all of its values are emitted. After that, it completes, regardless if the source completes.
 - take is the opposite of skip where take will take the first n number of emissions while skip will skip the first n number of emissions.
 
-### what is <base href>?
+### what is `<base href="/">`?
 - basePath is the URL prefix for all API paths, relative to the host root.
 - It must start with a leading slash / . If basePath is not specified, it defaults to / , that is, all paths start at the host root.
 - This guide works with a CLI-generated Angular application. If you are working manually, make sure that you have <base href="/"> in the <head> of your index.html file. This assumes that the app folder is the application root, and uses "/".
