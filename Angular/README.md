@@ -296,3 +296,11 @@ ng g module module_name --routing
 - means, the first route where the path matches the start of the URL is chosen, but then the route matching algorithm is continuing searching for matching child routes where the rest of the URL matches.
 - pathMatch = 'prefix' tells the router to match the redirect route when the remaining URL begins with the redirect route's prefix path.
 - Angular will search for a prefix of the path(in the URL) in the routes array.
+
+### query parameters:
+- "/clip?id=1"
+- shold be used for sorting/filtering through data.
+	
+### path parameters:
+- "/clip/1"
+- shold be used for returning a single resource or multiple resources.
