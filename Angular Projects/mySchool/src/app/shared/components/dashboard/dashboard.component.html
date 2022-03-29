@@ -1,0 +1,34 @@
+<div class="wrapper">
+
+    <router-outlet></router-outlet>
+
+    <!-- main section -->
+    <div class="container-fluid lr-s-n" id="content">
+        <!-- section header  -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <div class="">
+                    <button type="button" id="sidebarCollapse" class="toggleBTN"><i class="fa fa-bars"></i></button>
+                    <span class="ml-3 text-gray">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{pathName}}</span>
+                </div>
+                <button mat-mini-fab [matMenuTriggerFor]="menu" class="button-color" aria-label="Example icon button with a delete icon">
+          <mat-icon>person</mat-icon>
+        </button>
+            </div>
+        </nav>
+
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+        <mat-icon>logout</mat-icon><span>Logout</span>
+      </button>
+        </mat-menu>
+
+        <!-- Section body | Display components -->
+        <div class="display_content ">
+            <div class="display_inner_content">
+                <!-- <router-outlet></router-outlet> -->
+            </div>
+        </div>
+
+    </div>
+</div>

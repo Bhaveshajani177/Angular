@@ -1,0 +1,85 @@
+<div class="login_outer_container">
+    <div class="login_inner_container">
+        <div class="row">
+            <!-- form title  -->
+            <div class="col-sm-12">
+                <h3 class="title">Register</h3>
+            </div>
+
+            <div class="col-sm-12 mt-3">
+                <!-- form  -->
+                <form [formGroup]="registrationForm" (ngSubmit)="register()">
+                    <div class="row">
+                        <!-- Name -->
+                        <div class="col-sm-6 pd_non">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Name</mat-label>
+                                <input matInput formControlName="name" id="inpName" required>
+                                <mat-error *ngIf="isFormSubmitted  || _registrationForm['name'].dirty || _registrationForm['name'].touched">
+                                    <mat-error *ngIf="_registrationForm['name'].errors?.['required']">Name is required</mat-error>
+                                    <mat-error *ngIf="_registrationForm['name'].errors?.['maxlength']">
+                                        Max length is {{ _registrationForm['name'].errors?.['maxlength'].requiredLength }}
+                                    </mat-error>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <!-- email -->
+                        <div class="col-sm-6 pd_non">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Email</mat-label>
+                                <input matInput formControlName="email" id="inpEmail" required>
+                                <mat-error *ngIf="isFormSubmitted  || _registrationForm['email'].dirty || _registrationForm['email'].touched">
+                                    <mat-error *ngIf="_registrationForm['email'].errors?.['required']">Email is required</mat-error>
+                                    <mat-error *ngIf="_registrationForm['email'].errors?.['email']">Email is not valid</mat-error>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Password -->
+                        <div class="col-sm-6 pd_non">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Password</mat-label>
+                                <input type="password" matInput formControlName="password" id="inpPassword" (focusout)="passwordShouldMatch()" required>
+                                <mat-error *ngIf="isFormSubmitted  || _registrationForm['password'].dirty || _registrationForm['password'].touched">
+                                    <mat-error *ngIf="_registrationForm['password'].errors?.['required']">Password is required</mat-error>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <!-- Confirm password -->
+                        <div class="col-sm-6 pd_non">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Confirm password</mat-label>
+                                <input type="password" matInput formControlName="confirmPassword" id="inpConfirmPassword" (input)="passwordShouldMatch()" required>
+                                <mat-error *ngIf="isFormSubmitted  || _registrationForm['confirmPassword'].dirty || _registrationForm['confirmPassword'].touched">
+                                    <mat-error *ngIf="_registrationForm['confirmPassword'].errors?.['required']">Confirm password is required
+                                    </mat-error>
+                                    <mat-error *ngIf="_registrationForm['confirmPassword'].errors?.['pattern']">Password does not match
+                                    </mat-error>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <!-- button  -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <!-- <button type="submit" mat-raised-button class="submit-btn" [disabled]="!registrationForm.valid">Submit</button> -->
+                            <button type="submit" mat-raised-button id="btnSubmit" class="submit-btn">Submit</button>
+                        </div>
+                    </div>
+
+                    <!-- Login link -->
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <h4>Already have an account? <a class="link-text" (click)="navigate()">Login here</a></h4>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

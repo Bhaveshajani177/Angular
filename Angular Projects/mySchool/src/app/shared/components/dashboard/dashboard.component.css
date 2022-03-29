@@ -1,0 +1,175 @@
+/* global common css */
+
+.text-gray {
+    color: gray;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.text-13 {
+    font-size: 13.5px;
+}
+
+.text-14 {
+    font-size: 14px;
+}
+
+.text-16 {
+    font-size: 16px;
+}
+
+.text-18 {
+    font-size: 18px;
+}
+
+.pr-10 {
+    padding-right: 10px;
+}
+
+.mlr-none {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.pr-none {
+    padding-right: 0;
+}
+
+.pl-none {
+    padding-left: 0;
+}
+
+a {
+    font-family: sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+}
+
+body {
+    background: #f7f8fa;
+}
+
+
+/* css start */
+
+.lr-s-n {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    background: white;
+    color: rgb(42, 38, 38);
+    transition: all 0.3s;
+    z-index: 1;
+    box-shadow: 3px 0 3px -4px #777;
+}
+
+#sidebar .sidebar-header {
+    border-bottom: 1px solid white;
+    padding: 10px 0;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li {
+    margin: 5px 20px;
+}
+
+#sidebar ul li a {
+    padding: 10px 15px 10px 15px;
+    display: block;
+    color: gray;
+    border-radius: 5px;
+}
+
+#sidebar ul li a:hover {
+    background-color: #9251ac;
+    transition: .7s;
+    color: white;
+}
+
+#sidebar ul li a:hover i {
+    color: white;
+    transition: .7s;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+}
+
+.navbar {
+    background: white;
+    -webkit-box-shadow: 0 3px 3px -4px #777;
+    -moz-box-shadow: 0 3px 3px -4px #777;
+    box-shadow: 0 3px 3px -4px #777;
+}
+
+.sidebarBtn {
+    background-color: #9251ac;
+    padding: 10px;
+    color: white !important;
+    border-radius: 5px;
+}
+
+.toggleBTN {
+    background-color: #9251ac;
+    border: 0;
+    outline: 0;
+    padding: 5px 10px;
+}
+
+.toggleBTN>i {
+    color: white;
+    position: relative;
+    top: 1px;
+}
+
+.ttl_text {
+    letter-spacing: .4px;
+}
+
+.display_content {
+    background-color: #f7f8fa;
+    height: 100vh;
+}
+
+.display_inner_content {
+    padding: 20px;
+}
+
+.button-color {
+    background-color: #9251ac;
+    color: white;
+}
