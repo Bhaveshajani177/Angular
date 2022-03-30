@@ -17,7 +17,8 @@
 15. [Simple Angular Form Validation](https://stackblitz.com/edit/angular-ivy-kspr5y)
 16. [Routing Example (Query Params)](https://stackblitz.com/edit/angular-ivy-eg9nnp?file=src%2Fapp%2Fapp.component.ts)
 17. [Routing Example (children, relativeTo)](https://stackblitz.com/edit/angular-ivy-owdjem)
-<!-- 16. [RXJS Operators Examples](https://stackblitz.com/edit/angular-ivy-rrppjm?file=src%2Fapp%2Fapp.component.html) -->
+16. [RXJS Operators Examples](https://stackblitz.com/edit/angular-ivy-rrppjm?file=src%2Fapp%2Fapp.component.html)
+17. [Routing Example (Multiple Router Outlet)](https://stackblitz.com/edit/angular-ivy-nu8bub)
 
 # Notes
 
