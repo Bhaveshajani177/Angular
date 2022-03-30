@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { EmailValidatorService } from '../services/email-validator/email-validator.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { RegisterValidators } from '../core/validators/register-validators';
 
 @Component({
   selector: 'app-register',
@@ -52,14 +53,17 @@ export class RegisterComponent implements OnInit {
         Validators.pattern(this.regex.onlyDigit),
       ]),
       gender: new FormControl('', Validators.required),
-      passwords: new FormGroup({
-        password: new FormControl('', [
-          Validators.required,
-          Validators.minLength(6),
-          Validators.maxLength(16),
-        ]),
-        confirmPassword: new FormControl('', [Validators.required]),
-      }),
+      passwords: new FormGroup(
+        {
+          password: new FormControl('', [
+            Validators.required,
+            Validators.minLength(6),
+            Validators.maxLength(16),
+          ]),
+          confirmPassword: new FormControl('', [Validators.required]),
+        },
+        [RegisterValidators.match('password', 'confirmPassword')]
+      ),
     });
   }
 

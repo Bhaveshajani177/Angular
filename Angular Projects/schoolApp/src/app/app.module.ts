@@ -19,9 +19,10 @@ import { RegisterComponent } from './register/register.component';
 
 // classes
 import { Regex } from './utility/regex';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
-  declarations: [AppComponent, RegisterComponent],
+  declarations: [AppComponent, RegisterComponent, LoginComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

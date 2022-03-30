@@ -1,0 +1,56 @@
+<div class="container mt-3">
+    <h4>Login Form</h4>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <!-- email -->
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input formControlName="email" type="email" id="inpEmail" placeholder="Email" class="form-control" />
+            <!-- validations -->
+            <div *ngIf="isFormSubmitted || _loginForm['email'].dirty || _loginForm['email'].touched">
+                <!-- required validation -->
+                <div *ngIf="_loginForm['email'].errors?.['required']" class="text-danger">
+                    Email is required
+                </div>
+
+                <!-- email validation -->
+                <div *ngIf="_loginForm['email'].errors?.['email']" class="text-danger">
+                    Please enter a valid email
+                </div>
+
+                <!-- email taken -->
+                <div *ngIf="_loginForm['email'].errors?.['emailTaken']" class="text-danger">
+                    Email taken, Please try another email
+                </div>
+
+            </div>
+        </div>
+
+        <!-- password -->
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input formControlName="password" type="password" id="inpPassword" placeholder="Password" class="form-control" />
+
+            <!-- validations -->
+            <div *ngIf="isFormSubmitted  || _loginForm['password'].dirty || _loginForm['password'].touched">
+                <!-- required validation -->
+                <div *ngIf="_loginForm['password'].errors?.['required']" class="text-danger">
+                    Password is required
+                </div>
+
+                <!-- max length validation -->
+                <div *ngIf="_loginForm['password'].errors?.['maxlength']" class="text-danger">
+                    The maximum length for this field is {{ _loginForm['password'].errors?.['maxlength'].requiredLength }} characters
+                </div>
+
+                <!-- min length validation -->
+                <div *ngIf="_loginForm['password'].errors?.['minlength']" class="text-danger">
+                    The minimum length for this field is {{ _loginForm['password'].errors?.['minlength'].requiredLength }} characters
+                </div>
+            </div>
+        </div>
+
+        <!-- button  -->
+        <button [disabled]="inSubmission" class="btn btn-primary mt-3" type="submit">Login</button>
+        <!-- <button class="btn btn-primary mt-3" type="submit" [disabled]="registrationForm.invalid">Submit</button> -->
+    </form>
+</div>

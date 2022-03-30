@@ -1,7 +1,13 @@
 <!-- header -->
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <span class="navbar-brand mb-0 h1">{{title}}</span>
+        <span *ngIf="(authService.isAuthenticated$ | async)" class="navbar-brand mb-0 h1"><a
+        (click)="logout($event)">Logout</a></span>
     </div>
 </nav>
+<app-login *ngIf="!(authService.isAuthenticated$ | async)"></app-login>
 <app-register *ngIf="!(authService.isAuthenticated$ | async)"></app-register>
+
+<!-- loader -->
+<ngx-ui-loader></ngx-ui-loader>

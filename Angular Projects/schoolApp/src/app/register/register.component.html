@@ -98,7 +98,7 @@
             <!-- password -->
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input formControlName="password" type="password" id="password" placeholder="Password" class="form-control" (focusout)="passwordShouldMatch()" />
+                <input formControlName="password" type="password" id="password" placeholder="Password" class="form-control" />
 
                 <!-- validations -->
                 <div *ngIf="isFormSubmitted  || _passwords?.get('password')?.dirty || _passwords?.get('password')?.touched">
@@ -122,7 +122,7 @@
             <!-- confirm password -->
             <div class="mb-3">
                 <label for="confirmPassword" class="form-label">Confirm password</label>
-                <input formControlName="confirmPassword" type="password" id="confirmPassword" placeholder="Confirm password" class="form-control" ((input))="passwordShouldMatch()" />
+                <input formControlName="confirmPassword" type="password" id="confirmPassword" placeholder="Confirm password" class="form-control" />
 
                 <!-- validations -->
                 <div *ngIf="isFormSubmitted  || _passwords?.get('confirmPassword')?.dirty || _passwords?.get('confirmPassword')?.touched">
@@ -132,18 +132,20 @@
                     </div>
 
                     <!-- confirm password validation  -->
-                    <div *ngIf="_passwords?.get('confirmPassword')?.errors?.['pattern']" class="text-danger">
+                    <div *ngIf="_passwords?.get('confirmPassword')?.errors?.['noMatch']" class="text-danger">
                         Password does not match with password field
                     </div>
+
+                    <!-- confirm password validation  -->
+                    <!-- <div *ngIf="_passwords?.get('confirmPassword')?.errors?.['pattern']" class="text-danger">
+                        Password does not match with password field
+                    </div> -->
                 </div>
             </div>
         </div>
 
         <!-- button  -->
-        <button [disabled]="inSubmission" class="btn btn-primary mt-3" type="submit">Submit</button>
+        <button [disabled]="inSubmission" class="btn btn-primary mt-3" type="submit">Register</button>
         <!-- <button class="btn btn-primary mt-3" type="submit" [disabled]="registrationForm.invalid">Submit</button> -->
     </form>
 </div>
-
-<!-- loader -->
-<ngx-ui-loader></ngx-ui-loader>
