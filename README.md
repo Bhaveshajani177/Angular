@@ -20,6 +20,7 @@
 16. [RXJS Operators Examples](https://stackblitz.com/edit/angular-ivy-rrppjm?file=src%2Fapp%2Fapp.component.html)
 17. [Routing Example (Multiple Router Outlet)](https://stackblitz.com/edit/angular-ivy-nu8bub)
 18. [Angular File Upload](https://stackblitz.com/edit/angular-ivy-jjylxv)
+19. [API Call Example](https://stackblitz.com/edit/angular-ivy-cq6yxs?file=src%2Fapp%2Fapp.component.ts)
 
 # Notes
 
