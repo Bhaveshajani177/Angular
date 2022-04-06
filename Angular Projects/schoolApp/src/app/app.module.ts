@@ -12,6 +12,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 // components
 import { AppComponent } from './app.component';
@@ -20,9 +21,17 @@ import { RegisterComponent } from './register/register.component';
 // classes
 import { Regex } from './utility/regex';
 import { LoginComponent } from './login/login.component';
+import { UploadComponent } from './upload/upload.component';
+import { EventBlockerDirective } from './shared/directives/event-blocker.directive';
 
 @NgModule({
-  declarations: [AppComponent, RegisterComponent, LoginComponent],
+  declarations: [
+    AppComponent,
+    RegisterComponent,
+    LoginComponent,
+    UploadComponent,
+    EventBlockerDirective,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -35,6 +44,7 @@ import { LoginComponent } from './login/login.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     NgxUiLoaderModule,
+    AngularFireStorageModule,
   ],
   providers: [Regex],
   bootstrap: [AppComponent],

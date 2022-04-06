@@ -1,0 +1,38 @@
+<div class="container mt-3">
+    <h4>Upload Image</h4>
+
+    <ng-container *ngIf="!nextStep; else showForm">
+        <div app-event-blocker (dragend)="isDragover = false" (dragover)="isDragover = true" (dragenter)="isDragover = true" (dragleave)="isDragover = false" (mouseleave)="isDragover = false" (drop)="storeFile($event)" [ngClass]="{'back-hover':isDragover}" class="upload-container">
+            <h5>Drop your file here Drop your file here</h5>
+        </div>
+        <input type="file" class="mt-4" (change)="storeFile($event)">
+    </ng-container>
+
+    <ng-template #showForm>
+        <form [formGroup]="uploadForm" (ngSubmit)="uploadFile()">
+            <!-- title  -->
+            <div class="mb-3">
+                <input type="text" formControlName="title" class="form-control" id="inpImageTitle" placeholder="Enter image title">
+
+                <!-- validations -->
+                <div *ngIf="isFormSubmitted || uploadForm.get('title')?.dirty || uploadForm.get('title')?.touched">
+                    <!-- required validation -->
+                    <div *ngIf="uploadForm.get('title')?.errors?.['required']" class="text-danger">
+                        Title is required
+                    </div>
+
+                    <!-- min length validation -->
+                    <div *ngIf="uploadForm.get('title')?.errors?.['minlength']" class="text-danger">
+                        The minimum length for this field is {{ uploadForm.get('title')?.errors?.['minlength'].requiredLength }} characters
+                    </div>
+                </div>
+            </div>
+
+            <!-- button  -->
+            <div class="text-end">
+                <button type="submit" class="btn btn-primary">Publish</button>
+            </div>
+        </form>
+    </ng-template>
+
+</div>

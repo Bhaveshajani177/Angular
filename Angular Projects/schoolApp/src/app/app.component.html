@@ -8,6 +8,6 @@
 </nav>
 <app-login *ngIf="!(authService.isAuthenticated$ | async)"></app-login>
 <app-register *ngIf="!(authService.isAuthenticated$ | async)"></app-register>
-
+<app-upload *ngIf="(authService.isAuthenticated$ | async)"></app-upload>
 <!-- loader -->
 <ngx-ui-loader></ngx-ui-loader>
