@@ -4,13 +4,19 @@ import {
   AngularFirestore,
   AngularFirestoreCollection,
 } from '@angular/fire/compat/firestore';
+import {
+  ActivatedRouteSnapshot,
+  CanActivate,
+  RouterStateSnapshot,
+  UrlTree,
+} from '@angular/router';
 import { map, Observable } from 'rxjs';
 import { IStudent } from '../core/models/istudent';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthService {
+export class AuthService implements CanActivate {
   private studentCollection: AngularFirestoreCollection<IStudent>;
   public isAuthenticated$!: Observable<boolean>;
 
@@ -20,6 +26,17 @@ export class AuthService {
   ) {
     this.studentCollection = firebaseDb.collection('students');
     this.isAuthenticated$ = auth.user.pipe(map((user) => !!user));
+  }
+
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ):
+    | boolean
+    | UrlTree
+    | Observable<boolean | UrlTree>
+    | Promise<boolean | UrlTree> {
+    return this.auth.user.pipe(map((user) => !!user));
   }
 
   // create new student

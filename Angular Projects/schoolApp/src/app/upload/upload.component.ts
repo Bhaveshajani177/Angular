@@ -8,6 +8,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import firebase from 'firebase/compat/app';
 import { switchMap } from 'rxjs';
 import { ImageService } from '../services/image.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-upload',
@@ -29,7 +30,8 @@ export class UploadComponent implements OnInit {
     private angularFireStorage: AngularFireStorage,
     private ngxService: NgxUiLoaderService,
     private auth: AngularFireAuth,
-    private imageService: ImageService
+    private imageService: ImageService,
+    private router: Router
   ) {
     auth.user.subscribe((user) => (this.user = user));
   }
@@ -52,7 +54,7 @@ export class UploadComponent implements OnInit {
     }
 
     this.nextStep = true;
-    this.title.setValue(this.file.name.replace(/\.[^/.]+$/, ''));
+    this.title.setValue(this.file.name);
   }
 
   uploadFile() {
@@ -67,18 +69,24 @@ export class UploadComponent implements OnInit {
     const imageRef = this.angularFireStorage.ref(imagePath);
 
     imageUpload.then(async (res) => {
-      await imageRef.getDownloadURL().subscribe((res) => {
+      imageRef.getDownloadURL().subscribe(async (res) => {
         if (!this.user) {
           return;
         }
 
         const imageData = {
           uid: this.user.uid,
+          title: this.file?.name || 'demo image',
           fileName: `${imageFileName}.png`,
           url: res,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         };
 
-        this.imageService.createImage(imageData);
+        const imageRef = await this.imageService.createImage(imageData);
+
+        // setTimeout(() => {
+        //   this.router.navigate(['upload']);
+        // }, 1000);
       });
 
       this.ngxService.stop();

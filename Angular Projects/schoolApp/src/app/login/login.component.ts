@@ -4,6 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { RegisterValidators } from '../core/validators/register-validators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +23,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private auth: AngularFireAuth,
     private toastr: ToastrService,
-    private ngxService: NgxUiLoaderService
+    private ngxService: NgxUiLoaderService,
+    private router: Router
   ) {
     this.initializeForm();
   }
@@ -67,6 +69,7 @@ export class LoginComponent implements OnInit {
       }
 
       // if request successful
+      this.router.navigate(['list']);
       this.toastr.success('You are now logged in', 'Success!');
       this.resetForm();
       this.ngxService.stop();

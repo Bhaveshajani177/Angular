@@ -3,5 +3,7 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import '~ngx-toastr/toastr';
 a {
+    color: white !important;
+    text-decoration: none !important;
     cursor: pointer;
 }
