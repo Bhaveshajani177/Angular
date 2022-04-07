@@ -2,12 +2,33 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <span class="navbar-brand mb-0 h1">{{title}}</span>
-        <span *ngIf="(authService.isAuthenticated$ | async)" class="navbar-brand mb-0 h1"><a
-        (click)="logout($event)">Logout</a></span>
+
+        <!-- link list  -->
+        <div *ngIf="(authService.isAuthenticated$ | async)">
+            <!-- list  -->
+            <span class="navbar-brand mb-0 h1"><a routerLink="list">List</a></span>
+            <!-- upload  -->
+            <span class="navbar-brand mb-0 h1"><a routerLink="upload">Upload</a></span>
+            <!-- logout  -->
+            <span class="navbar-brand mb-0 h1"><a (click)="logout($event)">Logout</a></span>
+        </div>
+
+        <div *ngIf="!(authService.isAuthenticated$ | async)">
+            <!-- login -->
+            <span class="navbar-brand mb-0 h1"><a routerLink="login">Login</a></span>
+            <!-- register -->
+            <span class="navbar-brand mb-0 h1"><a routerLink="register">Register</a></span>
+        </div>
     </div>
 </nav>
-<app-login *ngIf="!(authService.isAuthenticated$ | async)"></app-login>
-<app-register *ngIf="!(authService.isAuthenticated$ | async)"></app-register>
-<app-upload *ngIf="(authService.isAuthenticated$ | async)"></app-upload>
+
+<!-- <app-login *ngIf="!(authService.isAuthenticated$ | async)"></app-login> -->
+<!-- <app-register *ngIf="!(authService.isAuthenticated$ | async)"></app-register> -->
+<!-- <app-upload *ngIf="(authService.isAuthenticated$ | async)"></app-upload> -->
+
+<div class="container-fluid mt-2">
+    <router-outlet></router-outlet>
+</div>
+
 <!-- loader -->
 <ngx-ui-loader></ngx-ui-loader>

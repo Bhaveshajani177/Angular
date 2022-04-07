@@ -23,6 +23,8 @@ import { Regex } from './utility/regex';
 import { LoginComponent } from './login/login.component';
 import { UploadComponent } from './upload/upload.component';
 import { EventBlockerDirective } from './shared/directives/event-blocker.directive';
+import { ListComponent } from './list/list.component';
+import { EditImageComponent } from './edit-image/edit-image.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { EventBlockerDirective } from './shared/directives/event-blocker.directi
     LoginComponent,
     UploadComponent,
     EventBlockerDirective,
+    ListComponent,
+    EditImageComponent,
   ],
   imports: [
     BrowserModule,

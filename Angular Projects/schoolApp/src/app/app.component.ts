@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from './services/auth.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -13,13 +14,14 @@ export class AppComponent {
 
   constructor(
     public authService: AuthService,
-    private angularFireAuth: AngularFireAuth
+    private angularFireAuth: AngularFireAuth,
+    private router: Router
   ) {}
 
   // logout method
   async logout($event: Event) {
     $event.preventDefault();
-
     await this.angularFireAuth.signOut();
+    this.router.navigate(['login']);
   }
 }

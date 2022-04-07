@@ -1,0 +1,25 @@
+<div class="container mt-3">
+    <h4>Edit Image</h4>
+    <form [formGroup]="editImageForm" (ngSubmit)="editImage()">
+        <!-- email -->
+        <div class="mb-3">
+            <label for="inpEmail" class="form-label">Title</label>
+            <input formControlName="title" type="email" id="inpEmail" placeholder="Enter title" class="form-control" />
+            <!-- validations -->
+            <div *ngIf="isFormSubmitted || editImageForm.get('title')?.dirty || editImageForm.get('title')?.touched">
+                <!-- required validation -->
+                <div *ngIf="editImageForm.get('title')?.errors?.['required']" class="text-danger">
+                    Title is required
+                </div>
+                <!-- min length validation -->
+                <div *ngIf="editImageForm.get('title')?.errors?.['minlength']" class="text-danger">
+                    The minimum length for this field is {{ editImageForm.get('title')?.errors?.['minlength'].requiredLength }} characters
+                </div>
+            </div>
+        </div>
+
+        <!-- button  -->
+        <button [disabled]="inSubmission" class="btn btn-primary mt-3" type="submit">Login</button>
+        <!-- <button class="btn btn-primary mt-3" type="submit" [disabled]="registrationForm.invalid">Submit</button> -->
+    </form>
+</div>
