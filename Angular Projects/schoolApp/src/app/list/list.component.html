@@ -10,7 +10,7 @@
                     <div class="col-6"></div>
                     <div class="col-6 text-end">
                         <button type="submit" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="openEditImageModel(img)">Edit</button>
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-danger" (click)="deleteImage($event,img)">Delete</button>
                     </div>
                 </div>
             </div>
@@ -19,7 +19,7 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" #closeModal id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
