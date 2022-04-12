@@ -13,6 +13,10 @@ export class RoleGuardService implements CanActivate {
     const role = localStorage.getItem('role');
 
     if (!this.auth.isAuthenticated() || role !== expectedRole) {
+      if (role) {
+        this.router.navigate([`dashboard/${role}`]);
+        return false;
+      }
       this.router.navigate(['auth/login']);
       return false;
     }

@@ -40,3 +40,9 @@ mat-form-field {
     color: #9251ac;
     cursor: pointer;
 }
+
+.signInWithGoogle {
+    background-color: white;
+    /* background-color: #4081EC; */
+    color: black;
+}

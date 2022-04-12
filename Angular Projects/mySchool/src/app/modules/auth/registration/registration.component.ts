@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AuthService } from '../../../core/services/auth/auth.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-registration',
@@ -11,7 +13,12 @@ export class RegistrationComponent implements OnInit {
   isFormSubmitted = false;
   registrationForm!: FormGroup;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private authService: AuthService,
+    private _snackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
     this.initializeForm();
@@ -52,11 +59,48 @@ export class RegistrationComponent implements OnInit {
   // register method
   register() {
     this.isFormSubmitted = true;
+
+    if (this.registrationForm.valid) {
+      try {
+        this.authService
+          .createNewUser(this.registrationForm.value)
+          .then((res) => {
+            this._snackBar.open('Registration completed successfully', 'ok', {
+              horizontalPosition: 'right',
+              verticalPosition: 'top',
+              duration: 3000,
+            });
+            this.resetForm();
+            this.navigate();
+          })
+          .catch((error: Error) => {
+            this._snackBar.open(error.message, 'ok', {
+              horizontalPosition: 'right',
+              verticalPosition: 'top',
+              duration: 3000,
+            });
+            return;
+          });
+      } catch (error: any) {
+        this._snackBar.open(error, 'ok', {
+          horizontalPosition: 'right',
+          verticalPosition: 'top',
+          duration: 3000,
+        });
+        return;
+      }
+    }
   }
 
   navigate() {
     this.router.navigate(['login'], {
       relativeTo: this.activatedRoute.parent,
     });
+  }
+
+  // reset form
+  resetForm() {
+    this.isFormSubmitted = false;
+    this.registrationForm.reset();
   }
 }

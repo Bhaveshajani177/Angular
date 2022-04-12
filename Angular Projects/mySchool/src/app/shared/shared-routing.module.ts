@@ -13,10 +13,6 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {
-        path: '',
-        redirectTo: 'admin',
-      },
-      {
         path: 'admin',
         component: AdminComponent,
         canActivate: [RoleGuard],
