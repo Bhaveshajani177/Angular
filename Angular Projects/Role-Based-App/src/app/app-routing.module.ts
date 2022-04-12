@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
+import { RouteGuardService } from './core/services/route-guard.service';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
     path: 'admin',
+    canActivate: [RouteGuardService],
+    data: { roleType: 'admin@gmail.com' },
     loadChildren: () =>
       import('./modules/administration/administration.module').then(
         (m) => m.AdministrationModule
@@ -18,6 +21,8 @@ const routes: Routes = [
   },
   {
     path: 'management',
+    canActivate: [RouteGuardService],
+    data: { roleType: 'management@gmail.com' },
     loadChildren: () =>
       import('./modules/management/management.module').then(
         (m) => m.ManagementModule

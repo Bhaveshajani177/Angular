@@ -34,6 +34,8 @@ export class LoginComponent implements OnInit {
   login() {
     this.isFormSubmitted = true;
     if (this.loginForm.valid) {
+      sessionStorage.setItem('userRole', this.loginForm.value.email);
+
       if (this.loginForm.value.email === 'admin@gmail.com') {
         this.router.navigate(['/admin']);
       } else if (this.loginForm.value.email === 'management@gmail.com') {
