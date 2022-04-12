@@ -1,1 +1,26 @@
-<p>login works!</p>
+<div class="login-form-container">
+    <h4 class="mb-4">Login Form</h4>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" formControlName="email" id="inpEmail" placeholder="name@example.com" required>
+            <label for="inpEmail">Email</label>
+            <!-- validation  -->
+            <div *ngIf="isFormSubmitted  || _loginForm['email'].dirty || _loginForm['email'].touched">
+                <span *ngIf="_loginForm['email'].errors?.['required']" class="text-danger">Email is required</span>
+                <span *ngIf="_loginForm['email'].errors?.['email']" class="text-danger">Email is not valid</span>
+            </div>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control" formControlName="password" id="inpPassword" placeholder="name@example.com" required>
+            <label for="inpPassword">Password</label>
+            <!-- validation  -->
+            <div *ngIf="isFormSubmitted  || _loginForm['password'].dirty || _loginForm['password'].touched">
+                <span *ngIf="_loginForm['password'].errors?.['required']" class="text-danger">Password is required</span>
+            </div>
+        </div>
+        <!-- button -->
+        <div class="">
+            <button type="submit" class="btn btn-primary formBtn">Submit</button>
+        </div>
+    </form>
+</div>
