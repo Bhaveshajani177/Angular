@@ -1,0 +1,14 @@
+<div class="container">
+    <mat-stepper linear #stepper>
+        <mat-step [completed]="_isCompleted">
+            <ng-template matStepLabel>Personal Details</ng-template>
+            <app-personal-details (_gotoNextStep)="savePersonalDetails($event)"></app-personal-details>
+        </mat-step>
+
+        <mat-step>
+            <ng-template matStepLabel>Educational Details</ng-template>
+            <app-educational-details (_submitEducationalDetails)="saveEducationalDetails($event)"></app-educational-details>
+            <!-- <button mat-button (click)=" stepper.reset();_isCompleted = false">Reset</button> -->
+        </mat-step>
+    </mat-stepper>
+</div>

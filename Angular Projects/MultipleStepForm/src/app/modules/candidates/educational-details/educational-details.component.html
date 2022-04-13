@@ -1,0 +1,32 @@
+<div class="login-form-container">
+    <form [formGroup]="educationalDetailsForm" (ngSubmit)="submitEducationalDetailsForm()" class="mt-2">
+        <!-- first name  -->
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" formControlName="instituteName" id="inpInstituteName" placeholder="Enter firat name" required>
+            <label for="inpInstituteName">Institute Name</label>
+            <!-- validation  -->
+            <div *ngIf="isFormSubmitted  || _educationalDetailsForm['instituteName'].dirty || _educationalDetailsForm['instituteName'].touched">
+                <span *ngIf="_educationalDetailsForm['instituteName'].errors?.['required']" class="text-danger">Institute name
+          is
+          required</span>
+            </div>
+        </div>
+
+        <!-- last name  -->
+        <div class="form-floating mb-3">
+            <input type="number" class="form-control" formControlName="passingYear" id="inpPassingYear" placeholder="Enter last name" required>
+            <label for="inpPassingYear">Passing Year</label>
+            <!-- validation  -->
+            <div *ngIf="isFormSubmitted  || _educationalDetailsForm['passingYear'].dirty || _educationalDetailsForm['passingYear'].touched">
+                <span *ngIf="_educationalDetailsForm['passingYear'].errors?.['required']" class="text-danger">Passing year is
+          required</span>
+            </div>
+        </div>
+
+        <!-- button -->
+        <div class="text-end">
+            <button mat-button matStepperPrevious class="btn btn-primary formBtn me-2">Back</button>
+            <button type="submit" class="btn btn-primary formBtn">Submit</button>
+        </div>
+    </form>
+</div>

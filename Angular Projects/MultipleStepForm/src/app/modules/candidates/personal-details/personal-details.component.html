@@ -1,0 +1,30 @@
+<div class="login-form-container">
+    <form [formGroup]="personalDetailsForm" (ngSubmit)="submitPersonalDetailsForm()" class="mt-2">
+        <!-- first name  -->
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" formControlName="firstName" id="inpFirstName" placeholder="Enter firat name" required>
+            <label for="inpFirstName">First Name</label>
+            <!-- validation  -->
+            <div *ngIf="isFormSubmitted  || _personalDetailsForm['firstName'].dirty || _personalDetailsForm['firstName'].touched">
+                <span *ngIf="_personalDetailsForm['firstName'].errors?.['required']" class="text-danger">First name is
+          required</span>
+            </div>
+        </div>
+
+        <!-- last name  -->
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" formControlName="lastName" id="inpLastName" placeholder="Enter last name" required>
+            <label for="inpLastName">Last Name</label>
+            <!-- validation  -->
+            <div *ngIf="isFormSubmitted  || _personalDetailsForm['lastName'].dirty || _personalDetailsForm['lastName'].touched">
+                <span *ngIf="_personalDetailsForm['lastName'].errors?.['required']" class="text-danger">Last name is
+          required</span>
+            </div>
+        </div>
+
+        <!-- button -->
+        <div class="text-end">
+            <button matStepperNext type="submit" class="btn btn-primary formBtn me-2">Next</button>
+        </div>
+    </form>
+</div>
