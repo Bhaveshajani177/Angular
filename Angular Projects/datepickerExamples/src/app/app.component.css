@@ -1,0 +1,33 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.mat-toolbar {
+    background: #293241;
+    color: white;
+}
+
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    background-color: #EE6C4D;
+}
+
+.mat-expansion-panel-header-title,
+.mat-expansion-panel-header-description {
+    color: #293241;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+::ng-deep .mat-expansion-indicator:after {
+    color: #293241;
+}
+
+::ng-deep .mat-expansion-indicator::after {
+    position: relative;
+    top: -3px
+}
+
+::ng-deep .mat-expansion-panel-body {
+    background-color: white;
+}
